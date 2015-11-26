@@ -1,0 +1,1308 @@
+@charset "utf-8";
+/* CSS Document */
+@-webkit-viewport{ width: device-width; }@-moz-viewport{width:device-width;}@-ms-viewport{width:device-width;}@-o-viewport{width:device-width;}@viewport{width:device-width;}
+@font-face{font-family:'proxima_novasemibold';src:url('../fonts/proximanova-semibold-webfont.eot');src: url('../fonts/proximanova-semibold-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/proximanova-semibold-webfont.woff2') format('woff2'),url('../fonts/proximanova-semibold-webfont.woff') format('woff'),url('../fonts/proximanova-semibold-webfont.ttf') format('truetype'),url('../fonts/proximanova-semibold-webfont.svg#proxima_novasemibold') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'proxima_nova_rgregular';src: url('../fonts/proximanova-regular-webfont.eot');src: url('../fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/proximanova-regular-webfont.woff2') format('woff2'),url('../fonts/proximanova-regular-webfont.woff') format('woff'),url('../fonts/proximanova-regular-webfont.ttf') format('truetype'),url('../fonts/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family:'OpenSans-Bold';src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/OpenSans-Bold.woff') format('woff'), url('../fonts/OpenSans-Bold.ttf')  format('truetype'), url('../fonts/OpenSans-Bold.svg#OpenSans-Bold') format('svg');font-weight: normal;font-style: normal;}	
+@font-face {font-family: 'MuseoSlab-700';src: url('../fonts/MuseoSlab-700.eot?#iefix') format('embedded-opentype'),  url('../fonts/MuseoSlab-700.otf')  format('opentype'),url('../fonts/MuseoSlab-700.woff') format('woff'), url('../fonts/MuseoSlab-700.ttf')  format('truetype'), url('../fonts/MuseoSlab-700.svg#MuseoSlab-700') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'gasparbold';src: url('../fonts/gaspar_bold-webfont.eot');src: url('../fonts/gaspar_bold-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/gaspar_bold-webfont.woff2') format('woff2'),url('../fonts/gaspar_bold-webfont.woff') format('woff'),url('../fonts/gaspar_bold-webfont.ttf') format('truetype'),url('../fonts/gaspar_bold-webfont.svg#gasparbold') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'gasparregular';src: url('../fonts/gaspar_regular-webfont.eot');src: url('../fonts/gaspar_regular-webfont.eot?#iefix') format('embedded-opentype'),         url('../fonts/gaspar_regular-webfont.woff2') format('woff2'),url('../fonts/gaspar_regular-webfont.woff') format('woff'),url('../fonts/gaspar_regular-webfont.ttf') format('truetype'),url('../fonts/gaspar_regular-webfont.svg#gasparregular') format('svg');font-weight: normal;font-style: normal;}
+.btn:focus, .btn.active,input:focus, input:hover .selectpicker:focus{outline:none !important;-webkit-outline:0px !important;}
+.btn, a{transition: all 0.3s ease 0s;-webkit-transition: all 0.3s ease 0s;-moz-transition: all 0.3s ease 0s;-ms-transition: all 0.3s ease 0s;-o-transition: all 0.3s ease 0s;}
+a:focus, a.active{ outline:none !important}
+html{-webkit-font-smoothing: antialiased;}
+body{-webkit-font-smoothing: antialiased;}
+.navbar-inverse .nav li:first-child,.accountlist ul li:first-child{ border-left:0px}
+.navbar-inverse .nav > li{ border-left:1px solid #626262}
+.navbar-inverse .nav > li .caret1{ position:relative; top:-3px}
+.navbar-inverse .nav li ul{ border-radius:0px; width:auto; border:0px}
+.navbar-inverse .nav li ul li a{ padding:5px 18px 5px 13px; font-size:15px; position:relative; text-transform:uppercase}
+.navbar-inverse .nav li ul li a:hover{ background-color:#F9A433; color:#fff}
+.navbar-inverse .navbar-nav:not(.sm-collapsible) ul .caret {position: absolute;right: 0;margin-top: 6px;margin-right: 15px;border-top: 4px solid transparent;border-bottom: 4px solid transparent;	border-left: 4px dashed;}
+.navbar-inverse .navbar-nav:not(.sm-collapsible) ul a.has-submenu {padding-right: 30px;}
+.navbar-inverse .navbar-nav.sm-collapsible .caret{border-style: solid;border-width: 1px;height: 21px;line-height: 19px;margin: 13px 10px 0 0;padding: 0;position: absolute;right: 0;text-align: center;width: 24px;}
+.navbar-inverse .navbar-nav.sm-collapsible ul .caret {border-style: solid;border-width: 1px;height: 21px;line-height: 19px;margin:0px 10px 0 0;padding: 0;position: absolute;right: 0;text-align: center;width: 24px;}
+.navbar-inverse .navbar-nav.sm-collapsible .caret:before {content: '+';font-family:'gasparregular';font-weight: bold;}
+.navbar-inverse .navbar-nav.sm-collapsible .open > a > .caret:before {content: '-';}
+.navbar-inverse .navbar-nav.sm-collapsible a.has-submenu {padding-right:50px;}
+/* revert to Bootstrap's default carets in collapsible mode when the "data-sm-skip-collapsible-behavior" attribute is set to the ul.navbar-nav */
+.navbar-inverse .navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] .caret,.navbar-inverse .navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] ul .caret {position: static;margin: 0 0 0 2px;	padding: 0;width: 0;height: 0;border-top: 4px dashed;border-right: 4px solid transparent;border-bottom: 0;border-left: 4px solid transparent;}
+.navbar-inverse .navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] .caret:before {content: '' !important;}
+.navbar-inverse .navbar-nav.sm-collapsible[data-sm-skip-collapsible-behavior] a.has-submenu {padding-right: 15px;}
+/* scrolling arrows for tall menus */
+.navbar-inverse .navbar-nav span.scroll-up, .navbar-inverse .navbar-nav span.scroll-down {position: absolute;display: none;visibility: hidden;height: 20px;overflow: hidden;text-align: center;}
+.navbar-inverse .navbar-nav span.scroll-up-arrow, .navbar-inverse .navbar-nav span.scroll-down-arrow {position: absolute;top: -2px;left: 50%;margin-left: -8px;width: 0;height: 0;overflow: hidden;border-top: 7px dashed transparent;border-right: 7px dashed transparent;border-bottom: 7px solid;border-left: 7px dashed transparent;}
+.navbar-inverse .navbar-nav span.scroll-down-arrow {top: 6px;border-top: 7px solid;border-right: 7px dashed transparent;border-bottom: 7px dashed transparent;border-left: 7px dashed transparent;}
+/* add more indentation for 2+ level sub in collapsible mode - Bootstrap normally supports just 1 level sub menus */
+.navbar-inverse .navbar-nav.sm-collapsible ul .dropdown-menu > li > a,.navbar-inverse .navbar-nav.sm-collapsible ul .dropdown-menu .dropdown-header {padding-left: 35px;}
+.navbar-inverse .navbar-nav.sm-collapsible ul ul .dropdown-menu > li > a,.navbar-inverse .navbar-nav.sm-collapsible ul ul .dropdown-menu .dropdown-header {padding-left: 45px;}
+.navbar-inverse .navbar-nav.sm-collapsible ul ul ul .dropdown-menu > li > a,.navbar-inverse .navbar-nav.sm-collapsible ul ul ul .dropdown-menu .dropdown-header {padding-left: 55px;}
+.navbar-inverse .navbar-nav.sm-collapsible ul ul ul ul .dropdown-menu > li > a,.navbar-inverse .navbar-nav.sm-collapsible ul ul ul ul .dropdown-menu .dropdown-header {padding-left: 65px;}
+/* fix SmartMenus sub menus auto width (subMenusMinWidth and subMenusMaxWidth options) */
+.navbar-nav .dropdown-menu > li > a {white-space: normal;}
+.navbar-nav ul.sm-nowrap > li > a {white-space: nowrap;}
+.navbar-nav.sm-collapsible ul.sm-nowrap > li > a{white-space:normal;}
+/* fix .navbar-right subs alignment */
+.navbar-right ul.dropdown-menu {left: 0;right: auto;}
+.top_header{ border-bottom:3px solid #F89E30}
+.top_header .custom-search-input .input-group{ display:block; margin-top:32px; padding-left:40px}
+.top_header .custom-search-input button{border:0;border-radius:0px;border-left:1px solid #DDDDDD;background:none;padding:2px 12px;margin-top:10px;position:absolute;margin-bottom:0;color:#F89D34;font-size:16px;left:auto;right:0;z-index:9;height:21px}
+.top_header .custom-search-input .btn-danger:hover, .top_header .custom-search-input .btn-danger:focus, .top_header .custom-search-input .btn-danger.focus, .top_header .custom-search-input .btn-danger:active, .top_header .custom-search-input .btn-danger.active, .open > .dropdown-toggle.btn-danger {background-color:transparent;border-left:1px solid #DDDDDD;color: #F89D34;}
+.top_header .custom-search-input .search-query{padding-right:40px; border:2px solid #DDDDDD; border-radius:0px; height:40px; font-size:18px;line-height:normal}
+.top_header .custom-search-input .search-query:focus{ box-shadow:none;border-color:#F89D34}
+.top_header .custom-search-input button:hover{background: none;color:#F89D34;border-left:1px solid #DDDDDD;}
+.top_header .accountlist ul{ margin-top:36px}
+.top_header .accountlist ul li a{font-family:'proxima_novasemibold'; color:#595757}
+.top_header .accountlist ul li a img{ position:relative; top:-5px; margin-right:5px}
+.top_header .accountlist ul li:first-child{ padding-right:10px; border-left:0px}
+.top_header .accountlist ul li{ border-left:1px solid #E6E6E6; line-height:34px; padding:0 15px}
+.top_header .accountlist ul li a:hover,.accountlist ul li a:focus{ text-decoration:none; color:#838181}
+.top_header .loginuser{padding-top:27px;}
+.top_header .loginuser li+li{border-left: 1px solid #e6e6e6;margin-top: 8px;padding-left: 8px;padding-right: 10px;vertical-align: top;}
+.top_header .loginuser .useracconut{font-family:'proxima_novasemibold';font-size:18px;background-color:transparent !important;border:0px;border:0px !important; padding-top:0px !important; color:#484848;}
+.top_header .loginuser .useracconut .name{text-overflow:ellipsis;white-space: nowrap;width:110px;overflow:hidden;display:inline-block; padding-top:10px}
+.top_header .loginuser .useracconut:hover,.top_header .loginuser .useracconut:focus{ text-decoration:none}
+.top_header .loginuser .useracconut .userimg{ width:46px; height:46px; float:left; margin-right:10px; background-repeat:no-repeat; background-size:cover; border:2px solid #f9a22f; border-radius:50%;background-position: center center;}
+.top_header .loginuser .signout{color:#484848;font-size:20px;}
+.top_header .loginuser .signout:hover{color:#f9a22f}
+.top_header .loginuser .notification{color:#484848;font-size:20px; position:relative}
+.top_header .loginuser .notification .badge{left:6px;position:absolute;top:-9px;background-color: #f9a22f;}
+.top_header .loginuser .useracconut .default_userimg{ width:46px; height:46px; float:left; margin-right:10px; background-repeat:no-repeat; background-size:cover; border:2px solid #f9a22f; border-radius:50%; background-color:#f9a22f; color:#fff;}
+.banner{position:relative}
+.banner_cnt{position:absolute; bottom:30px; width:100%}
+.banner_cnt h2{font-family: 'MuseoSlab-700'; color:#fff; font-size:73px}
+.banner_cnt a{ font-size:23px;font-family:'proxima_novasemibold'; padding:8px 20px; border-radius:0px; box-shadow:0 0 4px 0px #000000;color:#474747}
+.banner_cnt a:hover,.banner_cnt a:focus,.banner_cnt a:active, .banner_cnt a.active:focus{color:#474747 !important}
+.registered_row{ position:relative}
+.registered_row .commonbox {padding:5px 15px;}
+.registered_row .commonbox.first{background:url("../images/registered-brdr.png") no-repeat right center;border-bottom: 3px solid #ff7938;}
+.registered_row .commonbox.second {background:url("../images/registered-brdr.png") no-repeat right center;border-bottom: 3px solid #a7d001;padding-left: 30px;}
+.registered_row .commonbox.third {border-bottom: 3px solid #5abbdb;padding-left: 30px;}
+.registered_row .commonbox .icons {display: table-cell;width: 80px;}
+.registered_row .commonbox .content {display: table-cell;}
+.registered_row .commonbox .content h3{font-family:'OpenSans-Bold'; font-size:24px; color:#595757; margin-bottom:5px; margin-top:15px}
+.registered_row .commonbox .content p {font-family: 'proxima_nova_rgregular';font-size: 19px; margin-bottom:0}
+.registered_row .left-header, .registered_row .right-header{ position:absolute; height:100px; bottom:0}
+.registered_row .left-header{ left:0;border-bottom: 3px solid #ff7938;}
+.registered_row .right-header{ right:0;border-bottom: 3px solid #5abbdb;}
+.examcommunity_section{ background:url(../images/examcommunity_bg.jpg);}
+.examcommunity_section .commonlist h3{font-family:'gasparregular';font-size:18px;font-weight:bold;color:#464646; margin-bottom:15px; text-transform:uppercase;text-align:left }
+.examcommunity_section .commonlist h3 img{ position:relative; top:-3px}
+.examcommunity_section .commonlist ul li{ margin:5px 0;text-align:left }
+.examcommunity_section .commonlist ul li a{ color:#464646; font-size:14px;font-family:'proxima_novasemibold'; }
+.examcommunity_section .commonlist ul li a:hover, .examcommunity_section .commonlist ul li a:focus{ text-decoration:none}
+.examcommunity_section .commonlist > ul > li{ padding-left:20px}
+.examcommunity_section .commonlist > ul > li .subcategory_list li{ margin:2px 0}
+.examcommunity_section .commonlist > ul > li .subcategory_list li a{font-family: 'proxima_nova_rgregular'; font-size:13px}
+.examcommunity_section .commonlist.orange > ul > li{background:url(../images/orange_dot.png) no-repeat; background-position:left 9px}
+.examcommunity_section .commonlist.orange > ul > li i{ color:#FCB62C}
+.examcommunity_section .commonlist.orange > ul > li .subcategory_list li{ padding-left:18px; background:url(../images/orange_check.png) no-repeat left 9px}
+.examcommunity_section .commonlist.green > ul > li{background:url(../images/green_dot.png) no-repeat; background-position:left 9px}
+.examcommunity_section .commonlist.green > ul > li i{ color:#A7D001}
+.examcommunity_section .commonlist.green > ul > li .subcategory_list li{ padding-left:18px; background:url(../images/green_check.png) no-repeat left 9px}
+.examcommunity_section .commonlist.blue > ul > li{background:url(../images/blue_dot.png) no-repeat; background-position:left 9px}
+.examcommunity_section .commonlist.blue > ul > li i{ color:#5ABBDB}
+.examcommunity_section .commonlist.blue > ul > li .subcategory_list li{ padding-left:18px; background:url(../images/blue_check.png) no-repeat left 9px}
+.examcommunity_section .commonlist.darkorange > ul > li{background:url(../images/darkorange_dot.png) no-repeat; background-position:left 9px}
+.examcommunity_section .commonlist.darkorange > ul > li i{ color:#FF7938}
+.examcommunity_section .commonlist.darkorange > ul > li .subcategory_list li{ padding-left:18px; background:url(../images/darkorange_check.png) no-repeat left 9px}
+.examcommunity_listingdiv{white-space:nowrap;width:100%;height:305px; overflow:auto; margin:auto; padding-right:0px !important; width:auto !important; text-align:center}
+.examcommunity_listingdiv .col-lg-3{display:inline-block; float:none; vertical-align:top; width:auto}
+.vertical-track2{width: 10px;background: #e4e6e3;border: 1px solid #dfdfdd;}
+.vertical-handle2{width: 10px;}
+.vertical-handle2 .top {width: 9px;height:10px;background:#FF7938;}
+.vertical-handle2 .bottom {width:9px;height: 100%;position: absolute;bottom: 0;clip: rect(10px 10px 9999px 0);background:#FF7938;}
+.horizontal-track2 {width: 100%;height:10px;background: #e4e6e3;border: 1px solid #dfdfdd;}
+.horizontal-handle2 {height:9px;}
+.horizontal-handle2 .left {width:10px;height:9px;background:#FF7938;}
+.horizontal-handle2 .right {width: 100%;height:9px;position: absolute;right: 0;top: 0;clip: rect(0 9999px 10px 10px);background:#FF7938;}
+.corner2 {width:10px;height:10px;background: #e4e6e3;border: 1px solid #dfdfdd;}
+.common_section{ padding:30px 0 50px}
+.common_section header{ margin-bottom:50px}
+.common_section header h1{font-size:46px;font-family: 'gasparbold';margin-bottom:15px}
+.welcome_section{ background:url(../images/secondsection_ng.jpg) top center no-repeat; background-size:cover; padding-bottom:0;}
+.welcome_section header h1{ font-family: 'gasparregular'; font-size:34px}
+.welcome_section .top_section h2{ font-family: 'gasparregular';font-size:20px; margin-top:0;font-weight:bold}
+.featurediv figure{ background-color:transparent; border-radius:0px; border-style:dashed; border-color:#433223; border-width:2px; text-align:center}
+.featurediv figure h3{ margin-top:10px; font-size:20px;font-family: 'gasparregular'; font-weight:bold}
+.featurediv figure figcaption{ padding:10px 44px}
+.featurediv figure figcaption p{ margin-bottom:0px\9}
+.featurediv h2{font-family: 'gasparregular'; margin:40px 0;margin:15px 0px\9}
+.featurediv figure .hi-icon:after {pointer-events: none;position: absolute;width: 100%;height: 100%;border-radius: 50%;content: '';-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}
+.featurediv figure .hi-icon:before {speak: none;font-size: 48px;line-height:70px;font-style: normal;font-weight: normal;font-variant: normal;text-transform: none;display: block;-webkit-font-smoothing: antialiased;}
+.featurediv figure .hi-icon { border-radius: 50%;color: #ffffff; cursor: pointer;display: inline-block;font-size: 0;height:70px;margin: 15px 30px;margin: 15px 30px 0px\9;position: relative;text-align: center;width:70px;z-index: 1;}
+/* Effect 2 */
+.featurediv figure .hi-icon-effect-2 .hi-icon {color: #eea303;box-shadow: 0 0 0 3px #A7D001;-webkit-transition: color 0.3s;-moz-transition: color 0.3s;transition: color 0.3s;}
+.featurediv figure .hi-icon-effect-2 .hi-icon.green {color: #eea303;box-shadow: 0 0 0 3px #A7D001;-webkit-transition: color 0.3s;-moz-transition: color 0.3s;transition: color 0.3s;}
+.featurediv figure .hi-icon-effect-2 .hi-icon.blue {color: #eea303;box-shadow: 0 0 0 3px #5ABBDB;-webkit-transition: color 0.3s;-moz-transition: color 0.3s;transition: color 0.3s;}
+.featurediv figure .hi-icon-effect-2 .hi-icon.orange {color: #eea303;box-shadow: 0 0 0 3px #FF7938;-webkit-transition: color 0.3s;-moz-transition: color 0.3s;transition: color 0.3s;}
+.featurediv figure .hi-icon-effect-2 .hi-icon:after {top: -2px;left: -2px;padding: 2px;z-index: -1;background:#fff;-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;-moz-transition: -moz-transform 0.2s, opacity 0.2s;transition: transform 0.2s, opacity 0.2s;}
+.featurediv figure .hi-icon-effect-2 .hi-icon.green:after {top: -2px;left: -2px;padding: 2px;z-index: -1;background:#A7D001;-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;-moz-transition: -moz-transform 0.2s, opacity 0.2s;transition: transform 0.2s, opacity 0.2s;}
+.featurediv figure .hi-icon-effect-2 .hi-icon.blue:after {top: -2px;left: -2px;padding: 2px;z-index: -1;background:#5ABBDB;-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;-moz-transition: -moz-transform 0.2s, opacity 0.2s;transition: transform 0.2s, opacity 0.2s;}
+.featurediv figure .hi-icon-effect-2 .hi-icon.orange:after {top: -2px;left: -2px;padding: 2px;z-index: -1;background:#FF7938;-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;-moz-transition: -moz-transform 0.2s, opacity 0.2s;transition: transform 0.2s, opacity 0.2s;}
+.featurediv figure:hover .hi-icon-effect-2a .hi-icon:after {-webkit-transform: scale(0.85);-moz-transform: scale(0.85);-ms-transform: scale(0.85);transform: scale(0.85);}
+.social_section{ padding: 50px 0}
+.social_section header p{color:#333333}
+.social_section ul{ margin:55px 0 10px}
+.social_section ul li{ margin: 0 30px}
+.social_section ul li a{ border: 1px solid transparent;display:table-cell;vertical-align:middle;width:85px; height:85px;border-radius:50%}
+.social_section ul li.twitter a{border-color:#6AA8E0;color:#6AA8E0}
+.social_section ul li.twitter a:hover{background-color:#6AA8E0;color:#fff}
+.social_section ul li.facebook a{border-color:#3E599B;color:#3E599B}
+.social_section ul li.facebook a:hover{background-color:#3E599B;color:#fff}
+.social_section ul li.linkedin a{border-color:#2B7EB5;color:#2B7EB5}
+.social_section ul li.linkedin a:hover{background-color:#2B7EB5;color:#fff}
+.social_section ul li a .fa{ font-size:50px}
+footer {background-color:#454343;color: #ffffff;padding-top: 30px; border-top:4px solid #F9A22F}
+footer .f-brdr{ background:url(../images/f-brdr.png) no-repeat left center; padding-left:40px}
+footer .social li a{ color:#fff; font-size:20px}
+footer .middle h2{font-size:23px;font-family:'proxima_novasemibold'; margin-bottom:0; margin-top:10px}
+footer .middle h3{font-size:19px;font-family:'proxima_novasemibold'; margin-top:10px}
+footer .footer-link{ border-top:2px solid #4D4A4A; padding-top:30px; margin-top:30px}
+footer .footer-link li a{font-size:14px;color:#FFFFFF;text-transform: uppercase;}
+footer .footer-link li a:hover,footer .footer-link li a:focus{text-decoration:none; color:#b8b8b8}
+footer .footer-link li:first-child{ border-left:0}
+footer .footer-link li{border-left:1px solid #fff;height: 12px;line-height: 13px;padding: 0 24px; }
+.copyright-footer {background:#3D3A3A;color: #A4A0A0;font-size: 12px;margin-bottom: 0;margin-top: 20px;padding: 8px 0;text-align: center;}
+/*================end home page==================*/
+
+/*================start inner page==================*/
+.main_content{min-height:500px}
+.breadcrumb-section{background:url(../images/breadcrum_bg.jpg); height:170px; border-bottom:1px solid #e3e3e3}
+.breadcrumb-section .top_innerheading{font-family: 'gasparbold'; font-size:46px; color:#08BFDD; margin-top:0px; text-transform:uppercase}
+.breadcrumb-section .right .socialdiv{padding-left:100px;background-image:url(../images/shareon.png);margin-top:-17px;padding-left:132px;padding-top:25px;text-align:right;background-position:67px 7px;background-repeat:no-repeat}
+.innerpages_content {background:#F9F9F9;}
+.innerpages_content .tabcontainer{ margin-top:-51px}
+.innerpages_content .tabcontainer .tab-content{background:#F9F9F9; box-shadow: 0 -4px 5px -6px #333333; margin-top: 0;padding-top: 16px;position: relative;z-index: 10;}
+.tab_cnt_top.checklogin p{font-family: 'gasparbold'; color:#484848; font-size:22px;}
+.tab_cnt_top.checklogin p img.icon{ display:table-cell;margin-right:20px; float:left}
+.tab_cnt_top.checklogin p span{ display:table-cell; height:45px; vertical-align:middle}
+.tab_cnt_top{ vertical-align:top; margin-bottom:20px; margin-top:10px}
+.tab_cnt_top .sortby .form-group.common{ width:250px}
+.tab_cnt_top .sortby .form-group.common .btn .filter-option{  overflow: hidden;text-overflow: ellipsis;width: 100%;}
+.tab_cnt_top a{ display:inline-block; vertical-align:top;}
+.tab_cnt_top .custom-search-input{ display:inline-block}
+.tab_cnt_top .custom-search-input .input-group{ width:225px}
+.tab_cnt_top .custom-search-input button {border:0;border-radius:0px; border-left:1px solid #DDDDDD;background: none;padding:2px 12px;margin-top:10px;position:absolute;margin-bottom:0;color:#F89D34;font-size:16px; left:auto;right:0; z-index:9; height:21px}
+.tab_cnt_top .custom-search-input .btn-danger:hover, .tab_cnt_top .custom-search-input .btn-danger:focus, .tab_cnt_top .custom-search-input .btn-danger.focus, .tab_cnt_top .custom-search-input .btn-danger:active, .tab_cnt_top .custom-search-input .btn-danger.active, .open > .dropdown-toggle.btn-danger {background-color:transparent;border-left:1px solid #DDDDDD;color: #F89D34;}
+.tab_cnt_top .custom-search-input .search-query{padding-right:40px; border:2px solid #DDDDDD; border-radius:0px; height:40px; font-size:16px}
+.tab_cnt_top .custom-search-input .search-query:focus{ box-shadow:none;border-color:#F89D34}
+.tab_cnt_top .custom-search-input button:hover{background: none;color:#F89D34;border-left:1px solid #DDDDDD;}
+/*================Exam Exp tab==================*/
+.examexp-tab .total_exp .left img{ margin-right:10px; height:48px}
+.examexp-tab .total_exp .left h3{font-size:40px;font-family: 'gasparbold';margin-bottom:-7px;margin-top:-11px; display:inline-block}
+.examexp-tab .total_exp .left p{font-family:'proxima_novasemibold'; font-size:19px}
+.examexp-tab .total_exp .right p{ font-size:20px; text-align:left; padding-top:15px}
+.examexp-tab .total_exp{ background:url(../images/brdr01.png) repeat-x bottom center; padding-bottom:20px; margin-bottom:20px; margin-top:15px}
+.examexp-tab .examfilter_maindiv h4{ font-size:22px;font-family: 'gasparbold'; margin-bottom:20px;}
+.examexp-tab .examfilter_maindiv .examfilter{ background-color:#FFFFFF; border:1px solid #EDEDED; padding:20px}
+.examexp-tab .examfilter_maindiv .examfilter .top label{ font-size:20px;font-family:'gasparbold'; color:#444444; font-weight:normal}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group{ margin:0px 10px}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group.label{ margin-left:0;    padding-left: 0;}
+.examexp-tab .examfilter_maindiv .examfilter .top .filter_field{ display:inline-block}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group.common{width:185px}
+.examexp-tab .examfilter_maindiv .examfilter .sortby{ border-top:1px solid #F3F3F3; margin:20px 0 0; padding-top:20px}
+.examexp-tab .examfilter_maindiv .examfilter .sortby label{ font-size:18px;font-family:'gasparbold'; color:#444444; font-weight:normal}
+.examexp-tab .examfilter_maindiv .examfilter .sortby .common a{border:1px solid #E5E5E5; border-radius:3px; padding:6px 15px; color:#202020; margin:0 10px; display:inline-block; font-size:15px; text-transform:uppercase}
+.examexp-tab .examfilter_maindiv .examfilter .sortby .common a:hover,.examexp-tab .examfilter_maindiv .examfilter .sortby .common a:focus,.examexp-tab .examfilter_maindiv .examfilter .sortby .common a.active{ text-decoration:none; color:#F9950D}
+.examexp-tab .exam_exp_list{ margin-top:20px}
+.examexp-tab .exam_exp_list > ul > li{ border:1px solid #E4E4E4; background-color:#fff; position:relative; padding-left:155px}
+.examexp-tab .exam_exp_list > ul > li+li{ margin-top:20px}
+.examexp-tab .exam_exp_list .score_date{height:100%; width:155px; background-color:#F2F2F2;border-right:1px solid #E4E4E4; float:left; position:absolute; left:0}
+.examexp-tab .exam_exp_list .score_date .cmn{ padding:30px 15px}
+.examexp-tab .exam_exp_list .score_date .score{ border-bottom:1px solid #E4E4E4}
+.examexp-tab .exam_exp_list .score_date .cmn img{ margin-right:10px; position:relative;top:4px}
+.examexp-tab .exam_exp_list .score_date .cmn h3{ color:#08BFDD; font-size:30px;font-family: 'gasparbold';}
+.examexp-tab .exam_exp_list .score_date .cmn .cnt{ overflow:hidden}
+.examexp-tab .exam_exp_list .score_date .cmn .cnt p{ margin-bottom:0;font-family:'gasparbold'; font-size:15px; margin-top:-4px;color:#333333}
+.examexp-tab .exam_exp_list > ul > li .content .short_cnt{ padding:15px;}
+.examexp-tab .exam_exp_list > ul > li .content .short_cnt ul{ margin-bottom:10px}
+.examexp-tab .exam_exp_list > ul > li .content .short_cnt ul li img{ margin-top:-4px; margin-right:5px}
+.examexp-tab .exam_exp_list > ul > li .content .short_cnt ul li{ margin-right:10px; margin-bottom:5px}
+.examexp-tab .exam_exp_list > ul > li .content .short_cnt h2{ font-size:22px; margin-top:0;font-family:'gasparbold'; font-weight:normal; margin-bottom:15px;color:#F9950D; }
+.examexp-tab .exam_exp_list > ul > li .content .short_cnt h2 a{ color:#F9950D;}
+.examexp-tab .exam_exp_list > ul > li .content .short_cnt p{ margin-bottom:0}
+.examexp-tab .exam_exp_list > ul > li .content .showcmnt_list{ background-color:#F2F2F2; padding:10px 10px; border-top:1px solid #E4E4E4}
+.examexp-tab .exam_exp_list > ul > li .content .showcmnt_list li:first-child{ border-left:0}
+.examexp-tab .exam_exp_list > ul > li .content .showcmnt_list li{ border-left:2px solid #DFDFDF; padding:0 12px}
+.examexp-tab .exam_exp_list > ul > li .content .showcmnt_list li i{font-size:18px}
+.examexp-tab .examdetail_maindiv{ border:1px solid #E5E5E5;}
+.examexp-tab .examdetail_maindiv .examname_div{ padding:15px;  background-color: #ffffff; border-bottom:1px solid #E5E5E5}
+.examexp-tab .examdetail_maindiv .examname_div .score{height:100%; width:125px;border-right:1px solid #E4E4E4; float:left;left:0; margin-right:20px}
+.examexp-tab .examdetail_maindiv .examname_div .score img{ margin-right:10px; position:relative;top:4px}
+.examexp-tab .examdetail_maindiv .examname_div .score h3{ color:#08BFDD; font-size:30px;font-family: 'gasparbold';}
+.examexp-tab .examdetail_maindiv .examname_div .score .cnt{ overflow:hidden}
+.examexp-tab .examdetail_maindiv .examname_div .score .cnt p{ margin-bottom:0;font-family:'gasparregular'; font-size:16px; margin-top:-4px;  font-weight:bold; color:#333333}
+.examexp-tab .examdetail_maindiv .examname_div .content{ overflow:hidden}
+.examexp-tab .examdetail_maindiv .examname_div .content .short_cnt{ padding:0 15px;}
+.examexp-tab .examdetail_maindiv .examname_div .content .short_cnt ul{ margin-bottom:0px}
+.examexp-tab .examdetail_maindiv .examname_div .content .short_cnt ul li img{ margin-top:-4px; margin-right:5px}
+.examexp-tab .examdetail_maindiv .examname_div .content .short_cnt ul li{ margin-right:10px; margin-bottom:5px}
+.examexp-tab .examdetail_maindiv .examname_div .content .short_cnt h2{ font-size:22px; margin-top:0;font-family:'gasparregular'; font-weight:bold; margin-bottom:10px;color:#F9950D }
+.examexp-tab .examdetail_maindiv .examname_div .content .short_cnt h2 a{ color:#F9950D}
+.examexp-tab .examdetail_maindiv .examname_div .content .short_cnt p{ margin-bottom:0}
+.examexp-tab .exam_shedule{ background-color:#F9F9F9}
+.examexp-tab .exam_shedule ul li{ overflow:hidden; padding:20px 0; margin:0 35px}
+.examexp-tab .exam_shedule ul li+li{ border-top:1px solid #DFDFDF}
+.examexp-tab .exam_shedule ul li .icon{ display:table-cell;vertical-align:top; width:72px}
+.examexp-tab .exam_shedule ul li .cnt{ overflow:hidden;display:table-cell;  }
+.examexp-tab .exam_shedule ul li .cnt h2{ margin-top:0; font-size:20px;font-family:'gasparbold'; font-weight:normal; margin-bottom:3px}
+.examexp-tab .exam_shedule ul li .cnt p{ margin-bottom:0; font-size:18px}
+.examexp-tab .usefulreview{background-color:#fff; padding:10px 20px 8px; border-top:1px solid #EDEDED}
+.examexp-tab .usefulreview ul li a{font-size:18px;font-family:'proxima_novasemibold'; }
+.examexp-tab .usefulreview ul li a:hover, .usefulreview ul li a:focus{ text-decoration:none}
+.examexp-tab .usefulreview ul li a.yes{color:#A7D001;}
+.examexp-tab .usefulreview ul li a.no{color:#FF7938;}
+.examexp-tab .usefulreview ul li:first-child{ border-right:2px solid #DFDFDF}
+.examexp-tab .usefulreview ul li{ padding:0 10px}
+.examexp-tab .usefulreview .left label{ display:inline-block; float:left; margin-right:50px; font-weight:normal; font-size:18px;font-family: 'proxima_nova_rgregular';}
+.examexp-tab .usefulreview .left ul{ float:left; margin-bottom:0}
+.examexp-tab .usefulreview .right a{ text-decoration:underline }
+/*================end exam tab=============================*/
+/*================practice tab=============================*/
+.examexp-tab.practice-tab .examfilter_maindiv .examfilter .top .form-group.common{ width:275px}
+.examexp-tab.practice-tab .exam_exp_list .score_date{ background:url(../images/check-transbg.png) no-repeat top left #f2f2f2}
+.examexp-tab.practice-tab .exam_exp_list .score_date .fa{font-size:26px;left:5px;position:absolute;top:7px;}
+.examexp-tab.practice-tab .exam_exp_list .score_date .score{ border-bottom:0px}
+.examexp-tab.practice-tab .exam_exp_list .score_date .cmn{ padding:45px 5px 0; text-align:center; }
+.examexp-tab.practice-tab .exam_exp_list .score_date .cmn h3 img {height: 30px;margin-right:0;margin-top:-9px;position:relative;top:0;}
+.examexp-tab.practice-tab .exam_exp_list .score_date .cmn h3{color: #08bfdd;font-family: "gasparbold";font-size: 30px;}
+.examexp-tab.practice-tab .exam_exp_list .score_date .cmn .cnt p{margin-top:0px; font-size:15px}
+.examexp-tab.practice-tab .exam_exp_list > ul > li .content .short_cnt ul {margin-bottom: 0px;}
+.practice-tab .questdetail_maindiv{ background-color: #ffffff;border: 1px solid #ededed;border-radius: 4px;}
+.practice-tab .questdetail_maindiv .quset_div{padding: 20px;}
+.examexp-tab.practice-tab .exam_exp_list > ul > li .content .short_cnt h2 a.quest{display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:89%; float:left}
+.examexp-tab.practice-tab .exam_exp_list > ul > li .content .short_cnt h2 a.seequest{ font-weight:normal; font-size:16px; color:#08bfdd}
+.examexp-tab.practice-tab .exam_exp_list .score_date{}
+.practice-tab .questdetail_maindiv .quset_div h2.quest{font-family:'proxima_novasemibold'; margin-top:0; font-size:20px; line-height:25px; position:relative; padding-left:35px}
+.practice-tab .questdetail_maindiv .quset_div h2.quest span{ color:#08BFDD; position:absolute; left:0; top:0px; font-size:23px }
+.practice-tab .questdetail_maindiv .ans_view{background-color: #f9f9f9;border-top: 1px solid #e9e9e9;padding:20px;}
+.practice-tab .questdetail_maindiv .ans_view h4{margin-top:0;font-family:'proxima_novasemibold';}
+.practice-tab .questdetail_maindiv .ans_view h4 img{margin-top:-7px; margin-right:5px}
+.practice-tab .questdetail_maindiv .ans_view ul li{margin-bottom: 5px;margin-right: 10px;}
+.practice-tab .questdetail_maindiv .ans_view ul li img {margin-right: 5px;margin-top: -4px;}
+/*================end practice tab=============================*/
+/*================Study group chat=============================*/
+.livechat_page{ padding-bottom:0}
+.livechat-tab .chatmain_div{ position:relative; margin-top:0}
+.livechat-tab .chatmain_div .first_time_chat{}
+.livechat-tab .chatmain_div .joinchat_maindiv{left: 265px;position: absolute;top: 158px;width: 725px;z-index: 999;}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner{min-height:200px; background-color:#fff;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.63);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.63);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.63);padding:30px 30px;font-family:'gasparregular';}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner h2{font-size:28px; margin-top:0; color:#494949l; margin-bottom:20px}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner ul li{ margin:5px 0; font-size:20px; background:url(../images/listarrow-sprite.png) no-repeat; padding-left:30px; background-position:0 4px}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner ul li+li{background-position:0 -61px}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner ul li+li+li{ background-position:0 -125px}
+.livechat-tab .chatmain_div .joinchat_maindiv .btndiv{ margin-top:30px;}
+.livechat-tab .chatmain_div .joinchat_maindiv .btndiv a{ font-size:25px; font-family:'gasparbold'}
+.livechat-tab .chatmain_div .joinchat_maindiv .direction{ bottom: 13px;left: 22px;position: absolute;}
+.livechat-tab .chatmain_div .chatroom-name{ font-size:18px;font-family:'gasparregular'; font-weight:bold }
+.livechat-tab .chatmain_div .panel .left{ padding:15px 0; border-right:2px solid #CCCCCC}
+.livechat-tab .chatmain_div .panel .left .tab_list01{}
+.livechat-tab .chatmain_div .panel .left .tab_list01 ul{ border-bottom:0px; padding-left:9px;border-bottom:1px solid #E4E4E4; caption-side:bottom}
+.livechat-tab .chatmain_div .panel .left .tab_list01{overflow: hidden;transition: border 250ms ease;}
+.livechat-tab .chatmain_div .panel .left .tab_list01 ul li{float:left;margin-right:10px;z-index: 2;position:relative; list-style-type:none}
+.livechat-tab .chatmain_div .panel .left .tab_list01 ul li:last-child{ margin-right:0}
+.livechat-tab .chatmain_div .panel .left .tab_list01 ul li a{border:1px solid #E4E4E4;display:inline-block; font-family:'gasparregular';font-size:16px;color:#494949; font-weight:normal;background:#F0F0F0;padding: 10px 12px 8px; border-bottom:0px; border-radius:6px 6px 0 0}
+.livechat-tab .chatmain_div .panel .left .tab_list01 li.active { margin-bottom:-1px}
+.livechat-tab .chatmain_div .panel .left .tab_list01 li.active a{ color:#F9A22F; background:#fff; position:relative; top:1px}
+.livechat-tab .chatmain_div .panel .left .tab_list01 li a:hover,.livechat-tab .chatmain_div .panel .left .tab_list01 li a:focus{ text-decoration:none; color:#F9A22F;}
+.livechat-tab .chatmain_div .panel > .panel-body{ padding:0}
+.livechat-tab .chatmain_div .panel .left .searchuser{ padding: 5px 10px;}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input{ display:inline-block;float: left;margin-right:8px;}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .input-group{ width:214px}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input button {border:0;border-radius:0px; border-left:1px solid #DDDDDD;background: none;padding:2px 12px;margin-top:10px;position:absolute;margin-bottom:0;color:#F89D34;font-size:16px; left:auto;right:0; z-index:9; height:21px}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .btn-danger:hover, .livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .btn-danger:focus, .livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .btn-danger.focus, .livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .btn-danger:active, .livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .btn-danger.active, .open > .dropdown-toggle.btn-danger {background-color:transparent;border-left:1px solid #DDDDDD;color: #F89D34;}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .search-query{padding-right:40px; border:1px solid #DDDDDD; border-radius:3px; height:40px; font-size:16px}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .search-query:focus{ box-shadow:none;border-color:#F89D34}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input button:hover{background: none;color:#F89D34;border-left:1px solid #DDDDDD;}
+.livechat-tab .chatmain_div .panel .left .searchuser .addgroup-icon{ float:left}
+.livechat-tab .chatmain_div .panel .left .navbar-collapse{ padding:0px}
+.livechat-tab .chatmain_div .panel .left .userlisting{ margin-top:10px;height: 577px;overflow-x:hidden}
+.livechat-tab .chatmain_div .panel .left .userlisting .mCSB_container{ margin-right:0}
+.livechat-tab .chatmain_div .panel .left .userlisting .mCSB_scrollTools{ width:5px}
+.livechat-tab .chatmain_div .panel .left .userlisting ul{ margin-bottom:0}
+.livechat-tab .chatmain_div .panel .left .userlisting li{ padding:8px 20px; border-top:1px solid #CCCCCC}
+.livechat-tab .chatmain_div .panel .left .userlisting li a:hover,.livechat-tab .chatmain_div .panel .left .userlisting li a:focus{ text-decoration:none}
+.livechat-tab .chatmain_div .panel .left .userlisting li a .userinfo{ position:relative; line-height:60px}
+.livechat-tab .chatmain_div .panel .left .userlisting li a .userinfo .availability{ width:9px; height:9px;/* border:2px solid;*/border-radius:50%;-webkit-border-radius:50%;left:-8px;position:absolute;top:42%;}
+.livechat-tab .chatmain_div .panel .left .userlisting li a .userinfo .availability.offline{background-color:#FF4E4E}
+.livechat-tab .chatmain_div .panel .left .userlisting li a .userinfo .availability.online{ background-color:#37BE6C;}
+.livechat-tab .chatmain_div .panel .left .userlisting li.active a .userinfo .availability.online{ background-color:#37BE6C;}
+.livechat-tab .chatmain_div .panel .left .userlisting li.active{background-color:#ebebeb;}
+.livechat-tab .chatmain_div .panel .left .userlisting li a .userpic{width:46px;height:46px;background-size:cover; background-position:center; border-radius:50%; float:left; display:inline-block; margin-right:14px;
+ border:2px solid #d6d6d6; margin-left:14px;}
+.livechat-tab .chatmain_div .panel .left .userlisting li a .cnt{ padding-top:5px}
+.livechat-tab .chatmain_div .panel .left .userlisting li a .cnt h4{color:#333333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family: 'proxima_nova_rgregular'; font-size:16px}
+.livechat-tab .chatmain_div .panel .right{ padding:0}
+.livechat-tab .chatmain_div .panel .right .panel-heading { border-bottom:1px solid #CCCCCC; padding:15px 20px}
+.livechat-tab .chatmain_div .panel .right .panel-heading h2{ font-size:24px;font-family:'gasparbold';margin-top:10px; display:inline-block; margin:0}
+.livechat-tab .chatmain_div .panel .right .message-listing{ padding:20px 0px 20px 0px; height:573px; overflow-y:auto}
+.livechat-tab .chatmain_div .panel .right .message-listing .mCSB_scrollTools{ width:5px}
+.livechat-tab .chatmain_div .panel .right .message-listing .mCSB_container{ margin-right:0}
+.livechat-tab .chatmain_div .panel .right .message-listing .media .media-left, .media > .pull-left {padding-right: 20px;}
+.livechat-tab .chatmain_div .panel .right .message-listing .media .media-right, .media > .pull-right {padding-left:20px;}
+.livechat-tab .chatmain_div .panel .right .message-listing .media .media-object{border:2px solid #d6d6d6; width:46px; height:46px; background-position:center; background-size:cover; border-radius:50%;margin-top: 6px;}
+.livechat-tab .chatmain_div .panel .right .message-listing .media .media-body{font-family: 'proxima_nova_rgregular'; padding:15px; border-radius:5px; position:relative; overflow:visible}
+.livechat-tab .chatmain_div .panel .right .message-listing .media .media-body .arrow{position:absolute;top:15px;}
+.livechat-tab .chatmain_div .panel .right .message-listing .media p.time{ color:#969696;font-family: 'proxima_nova_rgregular'; font-size:15px; margin-top:5px}
+.livechat-tab .chatmain_div .panel .right .message-listing .media p.time span{ color:#5a5a5a !important}
+.livechat-tab .chatmain_div .panel .right .message-listing .media.recieve_msg{ padding-right:30%; padding-left:20px}
+.livechat-tab .chatmain_div .panel .right .message-listing .media.recieve_msg .media-body{background-color:#F2F2F2;color:#666666; border:1px solid #d6d6d6}
+.livechat-tab .chatmain_div .panel .right .message-listing .media.recieve_msg .media-body .arrow{  left:-10px;}
+.livechat-tab .chatmain_div .panel .right .message-listing .media.sent_msg{ padding-left:30%; padding-right:20px}
+.livechat-tab .chatmain_div .panel .right .message-listing .media.sent_msg .media-body{background-color:#F89E30; border:1px solid #F89E30; color:#fff}
+.livechat-tab .chatmain_div .panel .right .message-listing .media.sent_msg .media-body .arrow{ right: -9px;}
+.livechat-tab .chatmain_div .commentdiv{ border-top:1px solid #DBDBDB;  padding: 14px 20px; background-color:#F5F5F5}
+.livechat-tab .chatmain_div .commentdiv .btn-default{ background-color:#E8E8E8; border-color:#DBDBDB}
+.livechat-tab .chatmain_div .commentdiv .btn-default .fa-paper-plane{ color:#999999; font-size:24px}
+.livechat-tab .chatmain_div .commentdiv .form-control{ font-size:16px; border-color:#DBDBDB; padding-left:44px; background:url(../images/smile-icon.png) no-repeat 10px 16px; }
+.livechat-tab .chatmain_div .commentdiv .form-control:focus{ box-shadow:none}
+.livechat-tab .chatmain_div .commentdiv .input-group-lg > .form-control,.livechat-tab .chatmain_div .commentdiv .input-group-lg > .input-group-addon,.livechat-tab .chatmain_div .commentdiv .input-group-lg > .input-group-btn > .btn{ height:60px}
+.livechat-tab.personalchat-tab{}
+.livechat-tab .right .tab-content {box-shadow: none;margin-top: 0;padding-top: 0;position: relative;z-index: 10;background:#ffffff;}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading{padding: 6px 20px 5px; position:relative}
+.livechat-tab .right .tab-content .message_lisitng_mainbox{ position:relative}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right{ padding-top:5px}
+.livechat-tab .chatmain_div .panel .right .panel-heading .pull-right .sentfile-icon{display:inline-block }
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .btn-link{ padding:0}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown{ display:inline-block}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu{ left:auto; right:0; min-width:260px; padding:10px}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .autosearch textarea{max-height:150px;min-height:50px; height:50px; border-radius:0px}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting{ margin-top:15px; margin-bottom:10px; max-height:200px; overflow:auto}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting li{ padding:8px 0px;}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting li+li{border-top:1px solid #E0E3F1}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting li a:hover,.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting li a:focus{ text-decoration:none}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting li a .userinfo{ position:relative; line-height:60px}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting li a .userpic{width:46px;height:46px;background-size:cover; background-position:center; border-radius:50%; float:left; display:inline-block; margin-right:14px;border:2px solid #d6d6d6;}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting li a .cnt{ padding-top:5px}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting li a .cnt h4{color:#333333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family: 'proxima_nova_rgregular'; font-size:16px}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting .mCSB_scrollTools {width: 5px;}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading .pull-right .dropdown .dropdown-menu .adduserlisting .mCSB_container{margin-right:0}
+.livechat-tab.personalchat-tab .right .usernamepic{ float:left}
+.livechat-tab.personalchat-tab .right .usernamepic .userpic{width:46px; height:46px; border:2px solid #d6d6d6;border-radius:50%;background-position:center; background-size:cover;display: block;float: left; margin-right:15px}
+.livechat-tab.personalchat-tab .right .usernamepic span{padding-top:10px; display:block}
+.livechat-tab.personalchat-tab .right .usernamepic .username{ display:inline-block}
+.livechat-tab.personalchat-tab .right .usernamepic .username .no_of_users{ font-size:14px; color:#06BFDD}
+.livechat-tab.personalchat-tab .right .no_of_usersdiv{ position:absolute; width:100%;top:0;z-index:1;padding:8px 15px 9px;background-color:#fff; border-bottom:1px solid #cccccc; display:none}
+.livechat-tab.personalchat-tab .right .no_of_usersdiv .label{ display:inline-block; margin-bottom:4px; padding:5px 8px}
+.livechat-tab.personalchat-tab .right .group_chat_cnt .usernamepic span{padding-top:0px; display:block}
+/*================End Study group chat=============================*/
+/*================exam wiki tab==========================*/
+.examwiki-tab{}
+.examwiki-tab .usefulreview{background-color:#fff; padding:10px 0px 0px; border-top:2px dashed #e5e5e5}
+.examwiki-tab .usefulreview label {display: inline-block;float: left; font-family: "proxima_nova_rgregular";font-size: 18px;font-weight: normal;margin-right:20px;}
+.examwiki-tab .usefulreview ul li{ margin-right:0 !important}
+.examwiki-tab .usefulreview ul li a{font-size:18px;font-family:'proxima_novasemibold'; }
+.examwiki-tab .usefulreview ul li a:hover, .usefulreview ul li a:focus{ text-decoration:none}
+.examwiki-tab .usefulreview ul li a.yes{color:#A7D001;}
+.examwiki-tab .usefulreview ul li a.no{color:#FF7938;}
+.examwiki-tab .usefulreview ul li:first-child{ border-right:2px solid #DFDFDF}
+.examwiki-tab .usefulreview ul li{ padding:0 10px}
+/*================product and service tab==========================*/
+.examexp-tab.product-tab .examfilter_maindiv .examfilter .top .form-group.common {width: 212px;}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .short_cnt .logo-img{float:left;margin-bottom:12px;margin-right:15px;width:97px;}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .short_cnt ul {margin-bottom: 0px;}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .showcmnt_list ul li span.rating{ position:relative; top:-2px}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .showcmnt_list ul li a:hover,.examexp-tab.product-tab .exam_exp_list > ul > li .content .showcmnt_list ul li a:focus{ text-decoration:none}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .showcmnt_list ul li a.recommended{color:#A7D001}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .showcmnt_list ul li a.donot_recommended{color:#F43548}
+.examexp-tab.product-tab .exam_exp_list .score_date .score{ border-bottom:0px; text-align:center;padding:30px 10px;}
+.examexp-tab.product-tab .exam_exp_list .score_date .score .cnt p{ margin-top:0;}
+.examexp-tab.product-tab .exam_exp_list .score_date .score h3{ margin-top:0; margin-bottom:4px}
+.examexp-tab.product-tab .exam_exp_list .score_date .score .cnt p:first-child{ font-weight:normal}
+.course-tab .coursename_div .content .short_cnt .logo-img{float:left;margin-right:15px;width:97px;}
+.course-tab .coursename_div .content .short_cnt ul{margin-bottom: 0px;}
+.course-tab .coursename_div {background-color: #ffffff;border: 1px solid #e4e4e4;position: relative; padding:20px}
+.course-tab .coursename_div .content .short_cnt h2{ margin-top:0; color:#f9a22f;font-family:'gasparregular'; font-weight:bold}
+.course-tab .coursename_div .content .short_cnt h2 span{ display: inline-block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 78%;}
+.course-tab .coursename_div .examfilter .sortby{ border-top:1px solid #F3F3F3; margin:20px 0 0; padding-top:20px}
+.course-tab .coursename_div .examfilter .sortby .common a{border:1px solid #E5E5E5; border-radius:3px; padding:6px 15px; color:#202020; margin:0 10px; display:inline-block; font-size:15px; text-transform:uppercase}
+.course-tab .coursename_div .examfilter .sortby .common a:hover, .course-tab .examexp-tab .examfilter_maindiv .examfilter .sortby .common a:focus,.course-tab .examexp-tab .examfilter_maindiv .examfilter .sortby .common a.active{ text-decoration:none; color:#F9950D}
+.course-tab .coursename_div .short_cnt ul li .fa{ font-size:20px;margin-right:5px}
+.course-tab .opinium_list .recommend{ text-align:center; padding:20px 15px}
+.course-tab .opinium_list .recommend i{ font-size:35px}
+.course-tab .examdetail_maindiv h2.courseheading{font-size:25px; padding:15px 10px; margin:0; background-color:#fff; border-bottom:1px solid #ededed; color:#f9a22f}
+.course-tab .coursename_div .content .short_cnt ul li img{ margin-top:-3px; margin-right:5px}
+/*================End product and service tab========================*/
+/*================Forum tab =============================*/
+.forum-tab .forumlisting > ul > li{ border:1px solid #E9E9E9; background-color:#fff; padding:15px}
+.forum-tab .forumlisting > ul > li+li{ margin-top:20px}
+.forum-tab .forumlisting > ul > li .media .media-left{ padding-right:25px}
+.forum-tab .forumlisting > ul > li .media .media-left .media-object{ width:70px; height:70px; background-position:center; background-size:cover; border-radius:50%; border:2px solid #D6D6D6}
+.forum-tab .forumlisting > ul > li .media .media-body h4{ font-size:23px; color:#444444;font-family:'proxima_novasemibold';}
+.forum-tab .forumlisting > ul > li .media .media-body h4 a{color:#444444;}
+.forum-tab .forumlisting > ul > li .media .media-body h4 a:hover,.forum-tab .forumlisting > ul > li .media .media-body h4 a:focus{text-decoration:none; color:#F8920C}
+.forum-tab .forumlisting > ul > li .media .media-body p{ font-size:18px; color:#878787}
+.forum-tab .forumlisting > ul > li .media .media-body ul{ margin-bottom:10px}
+.forum-tab .forumlisting > ul > li .media .media-body ul li { color:#A3A3A3; margin-right:10px; margin-bottom:5px}
+.forum-tab .forumlisting > ul > li .media .media-body ul li .date{ color:#727272}
+.forum-tab .forumlisting > ul > li .media .media-body .forumtags .left span{text-transform: uppercase;margin-right:8px;display:inline-block; border:1px solid #FDE7B0; background-color:#FFF4DD; color:#F8A12E; padding:4px 8px; font-size:15px}
+.forum-tab .forumlisting > ul > li .media .media-body .forumtags .right p{ font-size:15px; color:#A3A3A3; text-align:right}
+.forum-tab .forumlisting > ul > li .media .media-body .forumtags .right p span{ color:#727272}
+.forumdetail_box{ border:1px solid #E5E5E5; border-radius:6px; background-color:#fff;min-height:300px;padding:20px}
+.forumdetail_box  .givecmnt{ margin-bottom:50px}
+.forumdetail_box .foruminner_div .media .media-left{ padding-right:25px}
+.forumdetail_box .foruminner_div .media-left .media-object{ width:70px; height:70px; background-position:center; background-size:cover; border-radius:50%; border:2px solid #D6D6D6}
+.forumdetail_box .foruminner_div .media .media-body h4{ font-size:23px; color:#444444;font-family:'proxima_novasemibold';}
+.forumdetail_box .foruminner_div .media .media-body p{ font-size:16px; color:#878787}
+.forumdetail_box .foruminner_div .media .media-body ul{ margin-bottom:10px}
+.forumdetail_box .foruminner_div .media .media-body ul li { color:#A3A3A3; margin-right:10px; margin-bottom:5px}
+.forumdetail_box .foruminner_div .media .media-body ul li .date{ color:#727272}
+.forumdetail_box .foruminner_div .media .media-body .forumtags{ border-bottom:2px dashed #E5E5E5; padding-bottom:20px}
+.forumdetail_box .foruminner_div .media .media-body .forumtags .left span{margin-right:8px;display:inline-block; border:1px solid #FDE7B0; background-color:#FFF4DD; color:#F8A12E; padding:4px 8px; font-size:15px; text-transform:uppercase}
+.forumdetail_box .foruminner_div .media .media-body .forumtags .right p{ font-size:15px; color:#A3A3A3; text-align:right}
+.forumdetail_box .foruminner_div .media .media-body .forumtags .right p span{ color:#727272}
+.forumdetail_box .forum-comments{ margin-top:30px; padding-left:90px}
+.forumdetail_box .forum-comments .givecmnt .media .media-left{ padding-right:25px}
+.forumdetail_box .forum-comments .givecmnt .media .media-left .media-object{ width:50px; height:50px; background-position:center; background-size:cover; border-radius:50%; border:2px solid #D6D6D6}
+.forumdetail_box .forum-comments .givecmnt .media .media-body{ padding-top:3px}
+.forumdetail_box .forum-comments .givecmnt .media .media-body .custom-search-input .input-group{ display:block;}
+.forumdetail_box .forum-comments .givecmnt .media .media-body .custom-search-input button {border:0;border-radius:0px; border-left:1px solid #DDDDDD;background: none;padding:2px 15px 2px 12px;margin-top:10px;position:absolute;margin-bottom:0;color: #D6D6D6; font-size:18px; left:auto;right:0; z-index:9; height:25px}
+.forumdetail_box .forum-comments .givecmnt.media .media-body .custom-search-input .btn-danger:hover, .forumdetail_box .forum-comments .givecmnt .media .media-body .custom-search-input .btn-danger:focus, .forumdetail_box .forum-comments .givecmnt .media .media-body .custom-search-input .btn-danger.focus, .forumdetail_box .forum-comments .givecmnt .media .media-body .custom-search-input .btn-danger:active, .forumdetail_box .forum-comments .givecmnt .media .media-body .custom-search-input .btn-danger.active, .open > .dropdown-toggle.btn-danger {background-color:transparent;border-left:1px solid #DDDDDD;color: #D6D6D6;}
+.forumdetail_box .forum-comments .givecmnt .media .media-body .custom-search-input .search-query{padding-right:50px; border:2px solid #EDEDED; border-radius:0px; height:45px; font-size:16px; border-radius:4px}
+.forumdetail_box .forum-comments .givecmnt .media .media-body .custom-search-input .search-query:focus{ box-shadow:none;border-color:#F89D34}
+.forumdetail_box .forum-comments .givecmnt .media .media-body .custom-search-input button:hover{background: none;color:#F89D34;border-left:1px solid #DDDDDD;}
+.forumdetail_box .forum-comments .commentlisting > h2{ font-size:20px;font-family: 'proxima_nova_rgregular'; margin-bottom:20px; color:#A3A3A3; border-bottom:2px dashed #E5E5E5; padding-bottom:5px}
+.timeline-centered {position: relative;margin-bottom: 30px;}
+.timeline-centered:before,.timeline-centered:after{content: " ";display: table;}
+.timeline-centered:after{clear: both;}
+.timeline-centered:before, .timeline-centered:after{content: " ";display: table;}
+.timeline-centered:after {clear: both;}
+.timeline-centered:before {content: '';position: absolute;display: block;width: 4px;background:#E5E5E5;top: 20px;bottom: 20px;margin-left: 23px;}
+.timeline-centered .timeline-entry{position: relative;margin-top: 5px;margin-bottom: 10px;clear: both;}
+.timeline-centered .timeline-entry:before,.timeline-centered .timeline-entry:after{content:" ";display: table;}
+.timeline-centered .timeline-entry:after{clear: both;}
+.timeline-centered .timeline-entry:before, .timeline-centered .timeline-entry:after {content:" ";display: table;}
+.timeline-centered .timeline-entry:after{clear: both;}
+.timeline-centered .timeline-entry.begin{margin-bottom: 0;}
+.timeline-centered .timeline-entry.left-aligned{float: left;}
+.timeline-centered .timeline-entry.left-aligned .timeline-entry-inner{margin-left: 0;margin-right: -18px;}
+.timeline-centered .timeline-entry.left-aligned .timeline-entry-inner .timeline-time{left: auto;right: -100px;text-align: left;}
+.timeline-centered .timeline-entry.left-aligned .timeline-entry-inner .timeline-icon{float: right;}
+.timeline-centered .timeline-entry.left-aligned .timeline-entry-inner .timeline-label{margin-left: 0;margin-right: 70px;}
+.timeline-centered .timeline-entry.left-aligned .timeline-entry-inner .timeline-label:after {left:auto;right: 0;margin-left: 0;margin-right: -9px;-moz-transform: rotate(180deg);-o-transform: rotate(180deg);         -webkit-transform: rotate(180deg);-ms-transform: rotate(180deg);transform: rotate(180deg);}
+.timeline-centered .timeline-entry .timeline-entry-inner {position: relative;}
+.timeline-centered .timeline-entry .timeline-entry-inner:before, .timeline-centered .timeline-entry .timeline-entry-inner:after {content: " ";display: table;}
+.timeline-centered .timeline-entry .timeline-entry-inner:after {clear: both;}
+.timeline-centered .timeline-entry .timeline-entry-inner:before, .timeline-centered .timeline-entry .timeline-entry-inner:after {content: " ";display: table;}
+.timeline-centered .timeline-entry .timeline-entry-inner:after {clear: both;}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-time {position: absolute;left: -100px;text-align: right;padding: 10px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-time > span {display: block;}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-time > span:first-child {font-size: 15px;font-weight: bold;}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-time > span:last-child {font-size: 12px;}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {display: block;width:50px;height:50px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;text-align: center;line-height:50px;font-size: 15px;float: left; border:2px solid #d6d6d6; background-size:cover; background-position:center}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {position: relative;background:#fff;padding:15px 15px;margin-left:70px;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px; border:1px solid #E5E5E5;}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {content: '';display: block;position: absolute;width:13px;height:22px;left: 0;top: 10px;margin-left:-13px; background:url(../images/arrow01.jpg) no-repeat;}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 {font-family:'proxima_novasemibold';font-size:18px;margin-bottom: 10px; color:#07BFDD; margin-top:0}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 a {color: #303641;}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 span { color:#333333;margin-left: 15px; font-size:15px;font-family: 'proxima_nova_rgregular';}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p{ margin-bottom:0}
+/*================end forum tab=============================*/
+/*================Common comments=============================*/
+.commentmain_div{ border:1px solid #EDEDED; border-radius:4px; background-color:#fff; padding:20px; margin-top:20px}
+.commentmain_div .commentlisting h2{ font-size:20px;font-family:'gasparbold'; font-weight:normal; margin-bottom:16px}
+.commentmain_div .commentlisting ul li{ border:1px solid #E9E9E9; background-color:#F9F9F9; padding:15px}
+.commentmain_div .commentlisting ul li+li{ margin-top:20px}
+.commentmain_div .commentlisting ul li .media .media-left{ padding-right:25px}
+.commentmain_div .commentlisting ul li .media .media-left .media-object{ width:70px; height:70px; background-position:center; background-size:cover; border-radius:50%; border:2px solid #D6D6D6}
+.commentmain_div .commentlisting ul li .media .media-body h4{ font-size:20px; color:#08BFDD;font-family:'proxima_novasemibold';}
+.commentmain_div .commentlisting ul li .media .media-body h4 .date{font-family: 'proxima_nova_rgregular'; color:#333333; font-size:16px; margin-left:15px}
+.commentmain_div .givecmnt{ margin-bottom:20px}
+.commentmain_div .givecmnt .media .media-left{ padding-right:25px}
+.commentmain_div .givecmnt .media .media-left .media-object{ width:70px; height:70px; background-position:center; background-size:cover; border-radius:50%; border:2px solid #D6D6D6}
+.commentmain_div .givecmnt .media .media-body{ padding-top:10px}
+.commentmain_div .givecmnt .media .media-body .custom-search-input .input-group{ display:block;}
+.commentmain_div .givecmnt .media .media-body .custom-search-input button {border:0;border-radius:0px; border-left:1px solid #DDDDDD;background: none;padding:2px 12px;margin-top:10px;position:absolute;margin-bottom:0;color: #D6D6D6; font-size:25px; left:auto;right:0; z-index:9; height:35px}
+.commentmain_div .givecmnt .media .media-body .custom-search-input .btn-danger:hover, .commentmain_div .givecmnt .media .media-body .custom-search-input .btn-danger:focus, .commentmain_div .givecmnt .media .media-body .custom-search-input .btn-danger.focus, .commentmain_div .givecmnt .media .media-body .custom-search-input .btn-danger:active, .commentmain_div .givecmnt .media .media-body .custom-search-input .btn-danger.active, .open > .dropdown-toggle.btn-danger {background-color:transparent;border-left:1px solid #DDDDDD;color: #D6D6D6;}
+.commentmain_div .givecmnt .media .media-body .custom-search-input .search-query{padding-right:40px; border:2px solid #EDEDED; border-radius:0px; height:55px; font-size:18px; border-radius:6px}
+.commentmain_div .givecmnt .media .media-body .custom-search-input .search-query:focus{ box-shadow:none;border-color:#F89D34}
+.commentmain_div .givecmnt .media .media-body .custom-search-input button:hover{background: none;color:#F89D34;border-left:1px solid #DDDDDD;}
+/*================end Common comments =============================*/
+
+/*=================membership-plan=======================*/
+.membershiplan h1{color: #f89b31;font-family: "proxima_novasemibold";font-size: 28px;margin-bottom: 23px;margin-top: 0;}
+.membershiplan ul li{ padding-bottom:5px;}
+.membershiplan ul li span {width:200px; margin-right:10px; display:inline-block;}
+.membershiplan ul li strong{ width:200px; display:inline-block;}
+.membershiplan ul li label span{ float:right;}
+/*=================membership-plan=======================*/
+
+/*================report-abuse-start =============================*/
+.report-abuse-page .panel-default > .panel-heading {padding:0px}
+.report-abuse-page .panel-default > .panel-heading .panel-title a{padding:10px 15px; display:block; text-decoration:none;font-size:18px;}
+.report-abuse-page h2{ margin-bottom:20px}
+
+/*================report-abuse-end =============================*/
+
+.new-background-image-brochure {background-image: url(../images/banner-img.jpg);height: 500px;width: 100%;}
+.signup_mainbox{ margin-top:-398px; padding-bottom:50px}
+.signup_mainbox header{ text-align:center; color:#fff; margin-bottom:50px}
+.signup_mainbox header h2{font-family: "gasparbold"; font-size:55px}
+.signup_mainbox header p{ font-size:25px; line-height:28px}
+.signup_innerbox {background: #ffffff;border-radius: 5px;box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3);padding:30px 30px;}
+.signup_innerbox .left{ border-right: 2px solid #d7d7d7; padding-right:20px; min-height:432px;}
+.signup_innerbox .left .choose_registration .radio-inline{ font-weight:bold}
+.signup_innerbox .left .choose_registration{ margin-bottom:15px}
+.signup_innerbox .left h1,.signup_innerbox .right h1{ color: #f89b31;font-family: "proxima_novasemibold"; font-size: 28px;margin-bottom: 23px;margin-top: 0;}
+.signup_innerbox .left  .forgot_pass{padding-top: 14px;}
+.signup_innerbox .left .promocode .input-group .btn{ margin-left:10px; border-radius:3px;}
+.signup_innerbox .left .promocode .input-group .form-control{ border-radius:3px}
+.signup_innerbox .right{ padding-left:20px}
+.signup_innerbox .right hgroup h3{ margin-top:0; font-size:20px}
+.signup_innerbox .right h2{font-size:18px;font-weight: bold;}
+.signup_innerbox .right ul{ margin-top:15px; margin-left:15px}
+.signup_innerbox .right ul li {color: #666666;font-size:16px;padding-left:30px; background:url(../images/list_creat.png) no-repeat left 5px; margin: 7px 0;}
+/*================Login Modal=============================*/
+.loginmodal{}
+.loginmodal .loginbox header{ margin-bottom:25px}
+.loginmodal .loginbox header img{ width:205px}
+.loginmodal .loginbox .modallogo{background-color:#ffffff;border-radius:6px 6px 0 0;margin:-46px auto 5px;padding:12px 20px 0;width:230px;}
+.loginmodal .loginbox header h2{font-family:'proxima_novasemibold'; border-bottom:4px solid #F79630; display:inline-block}
+.loginmodal .modal-body{ padding: 15px 50px;}
+.login_innerbox .left{ min-height:432px}
+/*================Static pages=============================*/
+.staticpage-breadcrumb{ height:auto; padding-bottom:10px}
+.common_pagecnt{ border: 1px solid #e4e4e4; border-top:0px; background-color:#fff; padding:30px 20px}
+.common_form_section{}
+.common_pagecnt .or{margin-left: 10px;margin-right: 10px;position: relative;top: -1px;}
+.inputcal-icon{ background:url(../images/calender-icon.png) no-repeat 95% 8px}
+.shareexam_form textarea{ height:127px;resize: none; font-size:16px; padding:10px 16px}
+.shareexam_form .scorefield label{ display:block}
+.shareexam_form .scorefield .input-lg{ width:104px; display:inline-block; margin-right:8px}
+.shareexam_form .scorefield .checkbox{ display:inline-block; margin-left:8px}
+.postwiki_form textarea{ height:125px;resize: none; font-size:16px; padding:10px 16px}
+.postforum_form textarea{ height:129px;resize: none; font-size:16px; padding:10px 16px}
+.examopinion_form{}
+.examopinion_form textarea{ height:168px;resize: none; font-size:16px; padding:10px 16px}
+.examopinion_form .radio-inline, .examopinion_form .checkbox-inline{font-size:15px}
+.contributequest_form{min-height: 389px;}
+.contributequest_form input{ z-index:0 !important}
+.contributequest_form textarea{ height:168px;resize: none; font-size:16px; padding:10px 16px}
+.contributequest_form .shortanswer textarea.short-box{height:70px !important;}
+.contributequest_form .multipleitem .mul_qa{ padding:15px; background-color:#ededed; margin-bottom:15px; position:relative;}
+.contributequest_form .multipleitem .mul_qa .delete-question{font-size: 14px;padding: 4px 12px;position: absolute;right: 15px;top: 7px;}
+/*================Dashboard=============================*/
+.userdashboard-page{padding-top:0}
+.userdashboard-page .dashboard_side{margin-top:0px; background-color:#fff;}
+.userdashboard-page .side-collapse-container{ position:relative}
+.userdashboard-page .dashboard_side .dashboard_menu{background-color:#454343;width:270px;position:fixed; left:0; height:100%; border:0px solid #DFE6E6; border-left:0px; border-top:0px; border-radius:0px; z-index:2}
+.userdashboard-page .dashboard_side .dashboard_menu ul{float:none}
+.userdashboard-page .dashboard_side .dashboard_menu .side-collapse .navbar-collapse{ padding-left:0px; padding-right:0px}
+.userdashboard-page .side-collapse-container .main-container{min-height:750px; padding-bottom:20px; padding-left:270px; padding-top:68px}
+.userdashboard-page .dashboard_side .dashboard_menu .navbar-header{padding:12px 20px;float:none;background-color: #545252;}
+.userdashboard-page .dashboard_side .dashboard_menu .navbar-header img{ margin:auto; height:44px}
+.userdashboard-page .dashboard_side .dashboard_menu .side-collapse ul li{display:block;float:none; border-bottom:1px solid #4e4c4d}
+.userdashboard-page .dashboard_side .dashboard_menu .side-collapse ul li a{ color:#fff; text-transform:uppercase;padding:10px 10px}
+.userdashboard-page .dashboard_side .dashboard_menu .side-collapse ul li a i.fa{ margin-right:10px}
+.userdashboard-page .dashboard_side .dashboard_menu .side-collapse ul li.active a,.userdashboard-page .dashboard_side .dashboard_menu .side-collapse ul li a:hover{ background-color:#f9a22f;}
+.userdashboard-page .dashboard_side .dashboard_menu .side-collapse ul li a:focus{ background-color:transparent; color:#fff}
+.userdashboard-page .side-collapse-container .main-container .topheader{background-color:#454343; min-height:60px;padding:12px 15px 10px 284px;position:fixed; width:100%; left:0; top:0;z-index:1}
+.userdashboard-page .side-collapse-container .main-container .topheader .left{ float:left}
+.userdashboard-page .side-collapse-container .main-container .topheader .left h3{color:#fff; margin:10px 0 0;font-family: "proxima_novasemibold"; font-size: 26px; }
+.userdashboard-page .side-collapse-container .main-container .topheader .right .homeicon.fa{ font-size:30px; position:relative; top:5px}
+.userdashboard-page .side-collapse-container .main-container .topheader .right .usernamepic .name{text-overflow:ellipsis;white-space: nowrap;overflow:hidden;display:inline-block; padding-top:15px;font-family:'proxima_novasemibold';font-size:18px; color:#fff}
+.userdashboard-page .side-collapse-container .main-container .topheader .right .usernamepic .userimg{ width:46px; height:46px; float:left; margin-right:10px; background-repeat:no-repeat; background-size:cover; border:2px solid #f9a22f; border-radius:50%;background-position: center center;}
+.userdashboard-page .side-collapse-container .main-container .topheader .right .usernamepic .default_userimg{ width:46px; height:46px; float:left; margin-right:10px;border:2px solid #f9a22f; border-radius:50%;background-color:#f9a22f; color:#fff; text-align:center; line-height:44px; text-transform:uppercase;font-family:'proxima_novasemibold';font-size: 25px}
+.userdashboard-page .side-collapse-container .main-container .topheader ul.right{ display:inline-block;margin-bottom:0;float:right}
+.userdashboard-page .side-collapse-container .main-container .topheader ul.right li{line-height:14px;}
+.userdashboard-page .side-collapse-container .main-container .topheader ul.right li a{ color:#fff; font:25px;}
+.userdashboard-page .side-collapse-container .main-container .topheader ul.right li a:hover{ color:#f9a22f}
+.userdashboard-page .side-collapse-container .main-container .topheader ul.right li.logout{ border-left:1px solid #fff; padding-left:10px}
+.userdashboard-page .side-collapse-container .main-container .content .searchuser{overflow:hidden; text-align:right}
+.userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input{ margin-bottom:15px; overflow:hidden}
+.userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input .input-group{display:block; width:280px; float:right; z-index:0}
+.userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input button{border:0;border-radius:0px;border-left:1px solid #DDDDDD;background:none;padding:2px 12px;margin-top:10px;position:absolute;margin-bottom:0;color:#F89D34;font-size:16px;left:auto;right:0;z-index:9;height:21px}
+.userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input .btn-danger:hover, .userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input .btn-danger:focus, .userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input .btn-danger.focus, .userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input .btn-danger:active, .top_header .custom-search-input .btn-danger.active, .open > .dropdown-toggle.btn-danger {background-color:transparent;border-left:1px solid #DDDDDD;color: #F89D34;}
+.userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input .search-query{padding-right:40px; border:2px solid #DDDDDD; border-radius:0px; height:40px; font-size:16px}
+.userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input .search-query:focus{ box-shadow:none;border-color:#F89D34}
+.userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input button:hover{background: none;color:#F89D34;border-left:1px solid #DDDDDD;}
+.userdashboard-page .side-collapse-container .main-container .admintable{}
+.userdashboard-page .side-collapse-container .main-container .admintable table{ margin-bottom:0}
+.userdashboard-page .side-collapse-container .main-container .admintable table thead th{background-color: #f0f0f0;border-bottom: 1px solid #e0e0e0;}
+.userdashboard-page .side-collapse-container .main-container .admintable table td {border-bottom: 1px dashed #e8e8e8; border-top:0px; vertical-align:middle}
+.userdashboard-page .side-collapse-container .main-container .content{ padding:15px}
+.userdashboard-page .side-collapse-container .main-container .content .panel.panel-default{ overflow:hidden;border-radius:0px; margin-bottom: 0;}
+.userdashboard-page .side-collapse-container .main-container .content .panel.panel-default .panel-body{ padding-top:0; padding-bottom:0; position:relative}
+.userdashboard-page .side-collapse-container .main-container .content .panel.panel-default .panel-body .overlay{position:absolute; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:3; left: 0; color:#fff}
+.userdashboard-page .side-collapse-container .main-container .content .panel.panel-default .panel-body .overlay .fa{ position:relative;top:50%; margin-top:-50px}
+.userdashboard-page .side-collapse-container .main-container .admintable .editviewdel{ margin-bottom:0; width:200px}
+.userdashboard-page .side-collapse-container .main-container .admintable .editviewdel li{ padding:0 2px;}
+.userdashboard-page .side-collapse-container .main-container .admintable .editviewdel li a{background-color:#5abbdb;border-radius:50%;color:#ffffff;display:inline-block;height:28px;padding-top:5px;text-align:center;width:28px;font-size:14px}
+.userdashboard-page .side-collapse-container .main-container .admintable .editviewdel li a:hover{ background-color:#4daecc}
+.adminpagination .pagination{ margin:13px 0 5px}
+.adminpagination .pagination > li:first-child > a, .adminpagination .pagination > li:first-child > span, .adminpagination .pagination > li:last-child > a,.adminpagination .pagination > li:last-child > span{ border-radius:0px}
+.adminpagination .pagination > li > a, .adminpagination .pagination > li > span{ padding:3px 12px}
+.dashboardboxes{ padding:50px}
+.dashboardboxes .panel-stat .panel-body{ padding:26px}
+.dashboardboxes .panel-stat {border: medium none;overflow: hidden;position: relative;}
+.dashboardboxes .panel-stat .icon {bottom: 45px;color: rgba(0, 0, 0, 0.1);position: absolute;right: 5px;z-index: 1;}
+.dashboardboxes .panel-stat .icon i {font-size: 100px;line-height: 0;margin: 0;padding: 0;vertical-align: bottom;}
+.dashboardboxes .panel .stat-num {font-size:43px;font-weight: 700;}
+.dashboardboxes .panel-stat h3 {color: #ffffff;}
+.myprofile{ padding:35px 40px}
+.myprofile .myprofile-desc{border-bottom: 1px solid #e5e5e5;padding-bottom:35px;margin-bottom:30px}
+.myprofile .myprofile-desc .profile-nav{display:table-cell;float:left;margin-right:35px;}
+.myprofile .myprofile-desc .profile-nav .mypic{ width:100px; height:100px; background-repeat:no-repeat; background-size:cover; border-radius:100%; background-position:center;  border: 2px solid #f9a22f; position:relative}
+.myprofile .myprofile-desc .profile-nav .mypic .mask{ bottom:-5px;position: absolute;text-align: center;width: 100%;}
+.myprofile .myprofile-desc .profile-nav .mypic .mask a{ padding:2px 8px}
+.myprofile .myprofile-desc .profile-info{display:table-cell;}
+.myprofile .myprofile-desc .profile-info h1{color:#08bfdd;font-family:"gasparbold";margin-top:10px;}
+.myprofile .myprofile-desc .profile-info ul{ margin-bottom:0}
+.myprofile .myprofile-desc .profile-info ul li{ margin-bottom:5px}
+.myprofile .myprofile-desc .profile-info ul li .fa{margin-right:5px; color:#f9a22f}
+.back_edit{ margin-bottom:20px}
+.common_dahboardform{ border: 1px solid #e4e4e4;background-color:#fff; padding:20px 20px}
+/*================my experiences=============================*/
+.myexperiences .exam_exp_list > ul{ margin-bottom:0}
+.myexperiences .exam_exp_list > ul > li{ border:1px solid #E4E4E4; background-color:#fff; position:relative;}
+.myexperiences .exam_exp_list > ul > li+li{ margin-top:20px}
+.myexperiences .exam_exp_list .score_date{height:100%; width:155px; background-color:#F2F2F2;border-right:1px solid #E4E4E4; float:left;left:0;   margin-right: 15px;}
+.myexperiences .exam_exp_list .score_date .cmn{ padding:30px 15px}
+.myexperiences .exam_exp_list .score_date .score{ border-bottom:1px solid #E4E4E4}
+.myexperiences .exam_exp_list .score_date .cmn img{ margin-right:10px; position:relative;top:4px}
+.myexperiences .exam_exp_list .score_date .cmn h3{ color:#08BFDD; font-size:30px;font-family: 'gasparbold';}
+.myexperiences .exam_exp_list .score_date .cmn .cnt{ overflow:hidden}
+.myexperiences .exam_exp_list .score_date .cmn .cnt p{ margin-bottom:0;font-family:'gasparbold'; font-size:16px; margin-top:-4px; color:#333333}
+.myexperiences .exam_exp_list > ul > li .list-info .short_cnt{ padding:15px;}
+.myexperiences .exam_exp_list > ul > li .list-info .short_cnt ul{ margin-bottom:10px}
+.myexperiences .exam_exp_list > ul > li .list-info .short_cnt ul li img{ margin-top:-4px; margin-right:5px}
+.myexperiences .exam_exp_list > ul > li .list-info .short_cnt ul li{ margin-right:10px; margin-bottom:5px}
+.myexperiences .exam_exp_list > ul > li .list-info .short_cnt h2{ font-size:22px; margin-top:0;font-family:'gasparregular'; font-weight:bold; margin-bottom:15px;color:#F9950D; }
+.myexperiences .exam_exp_list > ul > li .list-info .short_cnt h2 a{ color:#F9950D;}
+.myexperiences .exam_exp_list > ul > li .list-info .short_cnt p{ margin-bottom:0}
+.myexperiences .exam_exp_list > ul > li .list-info .showcmnt_list{ background-color:#F2F2F2; padding:10px 10px; border-top:1px solid #E4E4E4}
+.myexperiences .exam_exp_list > ul > li .list-info .showcmnt_list li:first-child{ border-left:0}
+.myexperiences .exam_exp_list > ul > li .list-info .showcmnt_list li{ border-left:2px solid #DFDFDF; padding:0 12px}
+.myexperiences .exam_exp_list > ul > li .list-info .showcmnt_list li i{font-size:18px}
+.myexperiences .exam_shedule{ background-color:#F9F9F9; border:1px solid #E4E4E4; border-top:0px}
+.myexperiences .exam_shedule ul li{ overflow:hidden; padding:20px 0; margin:0 35px}
+.myexperiences .exam_shedule ul li+li{ border-top:1px solid #DFDFDF}
+.myexperiences .exam_shedule ul li .icon{ display:table-cell;vertical-align:top; width:72px}
+.myexperiences .exam_shedule ul li .cnt{ overflow:hidden;display:table-cell;  }
+.myexperiences .exam_shedule ul li .cnt h2{ margin-top:0; font-size:20px;font-family:'gasparbold'; margin-bottom:3px}
+.myexperiences .exam_shedule ul li .cnt p{ margin-bottom:0; font-size:18px}
+/*================End my experiences=============================*/
+/*================My opinion=============================*/
+.myopinion{}
+.myopinion .coursename_div{background-color: #ffffff;border: 1px solid #e4e4e4;padding: 20px;position: relative;}
+.myopinion .coursename_div .short_cnt ul li{ margin-bottom:5px}
+.myopinion .coursename_div .short_cnt ul li .fa{font-size: 20px; margin-right: 5px;}
+.myopinion .info .short_cnt .logo-img {float: left;margin-right: 15px;width: 97px;}
+.myopinion .coursename_div .info .short_cnt h2{color: #f9a22f;font-family: "gasparbold";margin-top: 0;}
+.myopinion .coursename_div .info .short_cnt ul{margin-bottom: 0;}
+.myopinion .coursename_div .info .short_cnt ul li img{margin-right: 5px;margin-top: -3px;}
+.myopinion .examdetail_maindiv {border: 1px solid #e5e5e5;}
+.myopinion .examdetail_maindiv h2.courseheading {background-color: #ffffff;border-bottom: 1px solid #ededed;color: #f9a22f;font-size: 25px;margin: 0;padding: 15px 10px;}
+.myopinion .exam_shedule{ background-color:#F9F9F9;border-top:0px}
+.myopinion .exam_shedule ul li{ overflow:hidden; padding:20px 0; margin:0 35px}
+.myopinion .exam_shedule ul li+li{ border-top:1px solid #DFDFDF}
+.myopinion .exam_shedule ul li .icon{ display:table-cell;vertical-align:top; width:72px}
+.myopinion .exam_shedule ul li .cnt{ overflow:hidden;display:table-cell;  }
+.myopinion .exam_shedule ul li .cnt h2{ margin-top:0; font-size:20px;font-family:'gasparbold';margin-bottom:3px}
+.myopinion .exam_shedule ul li .cnt p{ margin-bottom:0; font-size:18px}
+.examopinion_form .exmrating .left{ padding-right:0}
+/*===============End my opinion=============================*/
+/*================My questions=============================*/
+.myquestions{}
+.myquestions .questdetail_maindiv{ background-color: #ffffff;border: 1px solid #ededed;border-radius: 4px;}
+.myquestions .questdetail_maindiv .quset_div{padding: 20px;}
+.myquestions .exam_exp_list > ul > li .content .short_cnt h2 a.quest{display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:89%; float:left}
+.myquestions .exam_exp_list > ul > li .content .short_cnt h2 a.seequest{ font-weight:normal; font-size:16px; color:#08bfdd}
+.myquestions .questdetail_maindiv .quset_div h2.quest{font-family:'proxima_novasemibold'; margin-top:0; font-size:20px; line-height:25px; position:relative; padding-left:35px}
+.myquestions .questdetail_maindiv .quset_div h2.quest span{ color:#08BFDD; position:absolute; left:0; top:0px; font-size:23px }
+.myquestions .questdetail_maindiv .quset_div .radio label{ padding-left:0}
+.myquestions .questdetail_maindiv .ans_view{ background-color: #f9f9f9;border-top: 1px solid #e9e9e9;padding:20px;}
+.myquestions .questdetail_maindiv .ans_view h4{ margin-top:0;font-family:'proxima_novasemibold';}
+.myquestions .questdetail_maindiv .ans_view h4 img{ margin-top:-7px; margin-right:5px}
+.myquestions .questdetail_maindiv .ans_view ul li{margin-bottom: 5px;margin-right: 10px;}
+.myquestions .questdetail_maindiv .ans_view ul li img {margin-right: 5px;margin-top: -4px;}
+.viewmypractice_ques .questdetail_maindiv .quset_div .radio label{ padding-left:20px}
+.viewmypractice_ques .questdetail_maindiv ul li{ margin-bottom:5px}
+.viewmypractice_ques .questdetail_maindiv ul li img {margin-right: 5px;margin-top: -4px;}
+/*================End My questions=============================*/
+/*================My Wiki=============================*/
+.viewwiki{}
+.viewwiki .wiki-info > ul{margin-bottom:0}
+.viewwiki .wiki-info > ul > li{ border:1px solid #E4E4E4; background-color:#fff; position:relative;padding:15px;}
+.viewwiki .wiki-info > ul > li ul li img{ margin-top:-4px; margin-right:5px}
+.viewwiki .wiki-info > ul > li ul li{ margin-right:10px; margin-bottom:5px}
+.viewwiki .wiki-info > ul > li ul li {color: #a3a3a3;margin-bottom: 5px;margin-right: 10px;}
+.viewwiki .wiki-info > ul > li ul li .date {color: #727272;}
+.viewwiki .wiki-info > ul > li  h2{ font-size:22px; margin-top:0;font-family:'gasparbold';  margin-bottom:10px;color:#F9950D; }
+.viewwiki .wiki-info > ul > li  p{ margin-bottom:0; color: #878787; font-size: 16px;}
+.viewwiki .wiki-info .forumtags{border-bottom: 2px dashed #e5e5e5;padding-bottom: 20px;}
+.viewwiki .wiki-info .forumtags .right p {color: #a3a3a3;font-size: 15px;text-align: right;}
+.viewwiki .wiki-info .forumtags .right p span {color: #727272;}
+.viewwiki .wiki-info .forumtags .left span {background-color: #fff4dd;border: 1px solid #fde7b0;color: #f8a12e;display: inline-block;font-size: 15px;margin-right: 8px;padding: 4px 8px;text-transform: uppercase; margin-bottom:5px}
+/*===============End My Wiki=============================*/
+/*================My forum=============================*/
+.viewforum{}
+.viewforum .forum-info > ul{margin-bottom:0}
+.viewforum .forum-info > ul > li{ border:1px solid #E4E4E4; background-color:#fff; position:relative;padding:15px;}
+.viewforum .forum-info > ul > li ul li img{ margin-top:-4px; margin-right:5px}
+.viewforum .forum-info > ul > li ul li{ margin-right:10px; margin-bottom:5px}
+.viewforum .forum-info > ul > li ul li {color: #a3a3a3;margin-bottom: 5px;margin-right: 10px;}
+.viewforum .forum-info > ul > li ul li .date {color: #727272;}
+.viewforum .forum-info > ul > li  h2{ font-size:22px; margin-top:0;font-family:'gasparbold'; font-weight:normal; margin-bottom:10px;color:#F9950D; }
+.viewforum .forum-info > ul > li  p{ margin-bottom:0; color: #878787; font-size: 16px;}
+.viewforum .forum-info .forumtags{border-bottom: 2px dashed #e5e5e5;padding-bottom: 20px;}
+.viewforum .forum-info .forumtags .right p {color: #a3a3a3;font-size: 15px;text-align: right;}
+.viewforum .forum-info .forumtags .right p span {color: #727272;}
+.viewforum .forum-info .forumtags .left span {background-color: #fff4dd;border: 1px solid #fde7b0;color: #f8a12e;display: inline-block;font-size: 15px;margin-right: 8px;padding: 4px 8px;text-transform: uppercase; margin-bottom:5px}
+/*================End My forum=============================*/
+/*================End Dashboard=============================*/
+
+/*================Start Admin=============================*/
+.dashboard-listing li a img {display: block; margin-bottom: 10px;margin-left: auto;margin-right: auto;}
+.dashboard-listing li .float-shadow::before {background: radial-gradient(ellipse at center center , rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%) repeat scroll 0 0 rgba(0, 0, 0, 0);content: "";height:10px;left: 5%;opacity: 0;pointer-events: none;position: absolute;top: 103%;-webkit-transition-duration:0.3s;transition-duration: 0.3s;-webkit-transition-property:transform, opacity;transition-property: transform, opacity;width: 90%;z-index: -1;}
+.dashboard-listing li a{display: inline-block;font-family:'gasparregular';font-size:16px;height:112px;line-height: 20px; margin:0 4px; padding: 8px 0; text-align: center; vertical-align: middle; width: 220px;}
+.dashboard-listing li { line-height: normal; margin:53px 6px 13px 10px; padding: 0 !important;}
+.dashboard-listing li .float-shadow{  box-shadow: 0 0 1px rgba(0, 0, 0, 0);display: inline-block;position: relative;-webkit-transform:translateZ(0px);transform: translateZ(0px);-webkit-transition-duration:0.3s;
+    transition-duration: 0.3s;-webkit-transition-property:transform; transition-property: transform;}
+.dashboard-listing li a:hover{border-color: #333333;text-decoration: none;}
+.dashboard-listing li .float-shadow:hover::before, .float-shadow:focus::before, .float-shadow:active::before {opacity: 1;transform: translateY(5px);}
+.dashboard-listing li .float-shadow:hover, .float-shadow:focus, .float-shadow:active {transform: translateY(-5px);}
+.userdashboard-page .dashboard_side .dashboard_menu .side-collapse ul li a{display:block; text-decoration:none; font-size:14px;} 
+.userdashboard-page .dashboard_side .dashboard_menu .side-collapse ul li ul li{display:block; text-indent:10px;} 
+.admin-side .admintable tbody td .logo-image{background-position: center center !important;background-size: cover; background-repeat:no-repeat !important;border: 3px solid #F9A22F;height: 90px;width:150px;}
+.admin-side .navbar-nav li .caret{background-image: url("../images/arrow-split.png");background-position:2px -18px;background-repeat: no-repeat;border: medium none;display: inline-block;float: right;height: 18px;margin-left: 2px;vertical-align: middle;width: 15px;}
+.admin-side .navbar-nav li .collapsed .caret{background-image: url("../images/arrow-split.png");background-position:2px 3px;}
+.admin-side .userdashboard-page .dashboard_side .dashboard_menu .side-collapse ul li ul li a{padding:10px; font-size:14px}
+.admin-side .dashboard_side .dashboard_menu .side-collapse ul li ul li{border:none;}
+.admin-side .view-profile .panel-body label{ width:277px; display:table-cell}
+.admin-side .view-profile .panel-body ul li{ padding:5px 0px;}
+.admin-side .view-profile .panel-body label em{ float:right;margin-right:10px; font-style:normal}
+.admin-side .view-profile .panel-body span{ display:table-cell;}
+.admin-side .admintable th{ white-space:nowrap;}
+.addnew_product span.to{position:relative;top: 36px; display:block; text-align:center;}
+.admin-side .myprofile{ padding:0px}
+.adminloginpage h1 {color: #333333;font-family:"gasparbold";font-size: 30px; margin-top: 0;padding-bottom: 25px; text-align: center;}
+.adminloginpage .form-wrap{background-color: #f3f2ed;border: 1px solid #dddddd;margin: 0 auto;padding: 25px;width: 360px;}
+.adminloginpage{padding-top: 50px;}
+/*================End Admin=============================*/
+
+/*=========================preset==============================*/
+.m-b-0{ margin-bottom:0 !important}.m-b-5{ margin-bottom:5px}.m-b-10{ margin-bottom:10px !important}.m-b-15{ margin-bottom:15px !important}.m-b-20{ margin-bottom:20px !important}.m-b-25{ margin-bottom:25px !important}.m-b-30{ margin-bottom:30px}.m-b-40{ margin-bottom:40px !important}.m-b-45{ margin-bottom:45px}.m-b-50{ margin-bottom:50px !important}.m-b-55{ margin-bottom:55px}.m-b-60{ margin-bottom:65px !important}.m-b-18 {margin-bottom:18px !important;}.m-b-19 {margin-bottom:19px !important}.m-tb-0 {margin-top:0;margin-bottom:0}.m-tb-5 {margin-top:5px;margin-bottom:5px}.m-tb-10 {margin-top:10px;margin-bottom:10px}.m-tb-20 {margin-top:20px;margin-bottom:20px}.m-lr-15 {margin-left:15px;margin-right:15px;}.m-lr-14 {margin-left:14px;margin-right:14px;}.m-lr-10 {margin-left:10px;margin-right:10px;}.m-t-0{ margin-top:0 !important}.m-t-10{ margin-top:10px}.m-t-5{ margin-top:5px}.m-t-20{ margin-top:20px;}.m-t-25{ margin-top:25px;}.m-t-30{ margin-top:30px;}.m-t-40{ margin-top:40px !important}.p-0{ padding:0 !important}.p-b-0{ padding-bottom:0px !important}.p-t-20 {padding-top:20px;}.p-t-30 {padding-top:30px;}.p-t-15 {padding-top:15px;}.p-b-20 {padding-bottom:20px !important;}.p-l-0 {padding-left:0px;}.p-r-0 {padding-right:0px;}.p-tb-10 {padding-top:10px !important;padding-bottom:10px !important}.p-tb-15 {padding-top:15px;padding-bottom:15px;}.m-lr-0{ margin-left:0px; margin-right:0px;}.p-lr-0{ padding-left:0px !important; padding-right:0px !important;}.p-lr-5{ padding-left:5px; padding-right:5px}.p-lr-20{ padding-left:20px; padding-right:20px}.color-fff{ color:#fff !important;}.color-red{ color:#F84E61}.txt_decoration_none:hover,.txt_decoration_none:focus{ text-decoration:none}.bg-gray{background-color:#313233}.wow{ visibility:visible !important}.color-pink{ color:#F84F62}.brdr-b-0{ border-bottom:0px}.p-t-0{ padding-top:0 !important}.link-blue{ color:#08BFDD}.link-blue:hover,.link-blue:focus{ text-decoration:none;color:#11c8d5}.btn-ttc{font-family: 'proxima_nova_rgregular'; font-size:17px}.color-orange{ color:#F8930C}.color-green{ color:#A7D001}.color-red{ color:#F43548}.color-blue{ color:#08BFDD}.link-orange{ color:#F89E30}.link-orange:hover,.link-orange:focus{ text-decoration:none;color:#e08e20}
+.load-more {margin-bottom:5px;margin-top: 20px;padding:8px 0;text-align: center;}
+.load-more a{ color:#888888; font-size:18px;font-family: 'proxima_novasemibold'; }
+.green-box{ background-color:#A7D001}
+.bg-orange {background-color: #FCB62C !important;color: #ffffff !important;}
+.bg-green  {background-color: #A7D001 !important;color: #ffffff !important;}
+.bg-blue {background-color: #5ABBDB !important;color: #ffffff !important;}
+.bg-darkorange {background-color: #FF7938 !important;color: #ffffff !important;}
+.bg-orange {background-color: #FCB62C !important;color: #ffffff !important;}
+.no-bd {border: medium none !important;box-shadow: none;}
+.color-purple{color: #af357b !important;}
+.color-darkgreen{color: #008b6b !important;}
+.color-yellow{color: #f7a600 !important;}
+.color-lightgreen{color: #88c734 !important;}
+.color-grass{color: #557c21 !important;}
+.color-lightpurple{color: #c1669a !important;}
+.color-lightblue{color: #0099ff !important;}
+.color-red-orange{color:#ff3620 !important;}
+@media(min-width:768px){
+.innerpages_content .tabcontainer .tab_list .navbar-collapse{ padding-left:0; padding-right:0}
+.innerpages_content .tabcontainer .tab_list ul{ border-bottom:0px; padding-top:8px; padding-left:0}
+.innerpages_content .tabcontainer .tab_list{overflow: hidden;transition: border 250ms ease;}
+.innerpages_content .tabcontainer .tab_list ul li{display:inline-block; float:left;padding: 10px 19px 8px;background-color: #FFF;margin-right:21px;z-index: 2;position:relative;transition: all 250ms ease; background:#F0F0F0;-webkit-box-shadow:0 -4px 6px -3px rgba(0, 0, 0, 0.2);-moz-box-shadow:0 -4px 6px -3px rgba(0, 0, 0, 0.2);box-shadow:0 -4px 6px -3px rgba(0, 0, 0, 0.2); margin-bottom:-1px}
+.innerpages_content .tabcontainer .tab_list ul li:last-child{ margin-right:0}
+.innerpages_content .tabcontainer .tab_list ul li a{font-family:"gasparbold";font-size:18px;color:#494949}
+.innerpages_content .tabcontainer .tab_list ul li.active a{ color:#F9A22F;}
+.innerpages_content .tabcontainer .tab_list ul li a:hover,.innerpages_content .tabcontainer .tab_list ul li a:focus{ text-decoration:none; color:#F9A22F;}
+.innerpages_content .tabcontainer .tab_list ul li:before,.innerpages_content .tabcontainer .tab_list ul li:after {display: block;content: " ";position: absolute;top: 0;height: 100%;width: 20px; background:#F0F0F0;transition: all 250ms ease;}
+.innerpages_content .tabcontainer .tab_list ul li:before {right:-8px;transform: skew(30deg, 0deg);-webkit-transform: skew(30deg, 0deg);box-shadow: rgba(0,0,0,.1) 3px 2px 5px, inset rgba(255,255,255,.09) -1px 0; background:#F0F0F0;}
+.innerpages_content .tabcontainer .tab_list ul li:after {left:-8px;transform: skew(-30deg, 0deg);-webkit-transform: skew(-30deg, 0deg);box-shadow: rgba(0,0,0,.1) -3px 2px 5px, inset rgba(255,255,255,.09) 1px 0; background:#F0F0F0;}
+.innerpages_content .tabcontainer .tab_list ul li:hover,.innerpages_content .tabcontainer .tab_list ul li:hover:before,.innerpages_content .tabcontainer .tab_list ul li:hover:after {background-color:#F4F7F9;color: #444;}
+.innerpages_content .tabcontainer .tab_list ul li.active {z-index: 3;}
+.innerpages_content .tabcontainer .tab_list ul li.active,.innerpages_content .tabcontainer .tab_list ul li.active:before,.innerpages_content .tabcontainer .tab_list ul li.active:after {background-color:#F9F9F9;color: #fff;z-index: 99;}
+.innerpages_content .tabcontainer .tab_list.round ul li {border-radius: 8px 8px 0 0;}
+.innerpages_content .tabcontainer .tab_list.round ul li:before {border-radius: 0 8px 0 0;}
+.innerpages_content .tabcontainer .tab_list.round ul li:after {border-radius: 8px 0 0 0;}	
+.tab_cnt_top .custom-search-input {margin-right: 10px;}
+.tab_cnt_top .left .back{ margin-right:5px}
+.tab_cnt_top .left .nextprev-group{ width:120px}
+}
+@media (min-width:992px)and (max-width: 1199px) {
+.top_header .loginuser {padding-top: 28px;}
+.top_header .loginuser .useracconut .name {width: 58px;}
+.top_header .loginuser li + li {padding-left:10px;}
+.navbar-inverse{ min-height:40px}
+.navbar-inverse .navbar-nav > li > a {font-size:12.7px; padding:10px 9px}	
+.top_header .logo img{ width:197px}
+.top_header .custom-search-input .input-group {margin-top:26px;padding-left: 10px;}
+.top_header .accountlist ul {margin-top: 25px;}
+.top_header .accountlist ul li {line-height: 43px;padding: 0 12px;}	
+.banner .banner_cnt h2 {font-size: 38px; margin-bottom:18px;}
+.banner .banner_cnt a {font-size: 21px;padding: 5px 20px;}
+.breadcrumb-section .top_innerheading {font-size:31px;}
+.breadcrumb-section .right .socialdiv{background-position:3px 7px; margin-top:-22px}
+.innerpages_content .tabcontainer .tab_list ul li a {font-size: 14.2px;}
+.innerpages_content .tabcontainer .tab_list ul li {margin-right: 20px;  padding: 10px 13px 8px;}
+.examexp-tab .total_exp .left img {width: 48px;}
+.examexp-tab .total_exp .left p {font-size: 18px;}
+.examexp-tab .total_exp .right p {font-size: 18px;}
+.examexp-tab .examfilter_maindiv .examfilter .top .filter_field {display: inline-block;margin-top: 13px;margin-left: -6px;}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group.common {width:210px;}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group {margin: 0 6px;}
+.examexp-tab .examfilter_maindiv .examfilter .sortby .common a {margin: 0 6px;padding: 6px 13px;}
+.examexp-tab.practice-tab .examfilter_maindiv .examfilter .top .form-group.common {width: 214px;}
+.examexp-tab.product-tab .examfilter_maindiv .examfilter .top .form-group.common{ margin-left: 0;margin-right: 10px; width:286px}
+.examexp-tab.product-tab .examfilter_maindiv .examfilter .top .form-group.label {display: block;float: none;clear: both;text-align: left;margin-bottom: 8px;}
+.examexp-tab.practice-tab .exam_exp_list > ul > li .content .short_cnt h2 a.quest {width: 84%;}
+.course-tab .coursename_div .examfilter .sortby .common a {font-size: 15px;margin: 0 2px;padding: 6px 8px;}
+.course-tab .coursename_div .content .short_cnt h2 span {width: 70%;}
+.examwiki-tab .tab_cnt_top .sortby .form-group.common {width: 202px;}
+footer .footer-link li{padding: 0 14px;}
+.livechat-tab .chatmain_div .joinchat_maindiv {left: 146px;position: absolute;top: 180px;width: 640px;}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner h2 {font-size: 25px;margin-bottom: 20px;margin-top: 0;}
+.livechat-tab .chatmain_div .joinchat_maindiv .btndiv a{font-size: 20px;}
+.livechat-tab .chatmain_div .panel .left .tab_list01 ul li a {padding: 10px 8px 8px;}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .search-query {font-size: 14px;}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .input-group {width: 161px;}
+.shareexam_form .scorefield .input-lg {width:73px; margin-right:2px; padding-right:8px}
+.shareexam_form .scorefield img{ width:40px}
+.shareexam_form .scorefield .checkbox {display: inline-block;margin-left: 4px;}
+.examopinion_form .exmrating .right .form-group{ text-align:left !important }
+.dashboardboxes{padding: 28px 0;}
+.dashboardboxes .panel-stat .panel-body{padding: 14px;}
+.dashboardboxes .panel .stat-num {font-size: 35px;font-weight: 700;}
+.dashboardboxes .panel-stat .icon {bottom: 30px;}
+.dashboardboxes .panel-stat h3 {font-size: 20px;}
+.dashboardboxes .panel-stat .icon i {font-size: 67px;}
+.userdashboard-page .side-collapse-container .main-container .admintable .editviewdel{margin-bottom: 0;width: 110px;}
+.userdashboard-page .side-collapse-container .main-container .admintable .editviewdel li{ padding:0 2px}
+.myexperiences .exam_shedule ul li .cnt p {font-size: 16px;}
+.userdashboard-page .dashboard_side .dashboard_menu{ width:230px}
+.userdashboard-page .side-collapse-container .main-container {padding-left: 230px;}
+.userdashboard-page .side-collapse-container .main-container .topheader {padding: 12px 15px 10px 246px;}
+.myopinion .exam_shedule ul li .cnt p {font-size: 16px;}
+.report-abuse-page h2{ font-size:27px;}
+.examopinion_form .product-service .btn-primary{ margin-top:0px; float:left !important; margin-bottom:15px;}
+}
+@media (min-width:768px)and (max-width: 991px) {
+.navbar-inverse{ min-height:32px}
+.navbar-inverse .navbar-nav > li > a {font-size: 10px;padding: 6px 6px;}	
+.navbar-inverse .nav > li .caret1 {top:0px;}
+.top_header .logo img{ width:160px}
+.top_header .logo a.navbar-brand{ padding-left:0}
+.top_header .custom-search-input .input-group {margin-top:18px;padding-left:0px;}
+.top_header .custom-search-input .search-query {font-size: 16px;}
+.top_header .accountlist ul li {line-height:35px;padding: 0 12px;}	
+.top_header .accountlist ul {margin-top:20px;}
+.top_header .loginuser {padding-top: 22px;}
+.top_header .loginuser .useracconut .name {width:67px;}
+.top_header .loginuser li + li {padding-left:10px;}
+.banner .banner_cnt h2 {font-size: 38px; margin-bottom:18px;}
+.banner .banner_cnt a {font-size: 21px;padding: 5px 20px;}
+.registered_row .commonbox {padding: 4px 15px 10px;}
+.registered_row .commonbox .content p {font-size: 14px;}
+.common_section header h1 {font-size: 34px;}
+.welcome_section header h1 {font-size:28px;}
+.featurediv figure h3 {font-size: 17px;}
+.welcome_section .top_section p,.featurediv figure figcaption p{ font-size:14px}
+.featurediv figure figcaption {height: 102px;padding: 10px;}
+footer .f-brdr { padding-left: 15px;}
+footer .f-top .logo{ padding-top:15px}
+footer .footer-link li {padding:0 5px 0 8px;}
+footer .footer-link li a {font-size: 12px;}
+footer .footer-link {padding-top: 20px;}
+.copyright-footer {margin-top: 5px;padding:6px 0;text-align: center;}
+.innerpages_content .tabcontainer .tab_list ul li {margin-right: 20px;}
+.innerpages_content .tabcontainer .tab_list .container{ padding:0}
+.innerpages_content .tabcontainer .tab_list ul {white-space: nowrap;width: 100%;overflow-x: auto; overflow-y:hidden; padding:6px 24px 0; margin-bottom:0}
+.innerpages_content .tabcontainer .tab_list.round ul li {float: none;display: inline-block;}
+.innerpages_content .tabcontainer .tab_list.round ul li a{ font-size:14px}
+.breadcrumb-section .top_innerheading {font-size:26px;}
+.breadcrumb-section .right .socialdiv{background-position:4px 7px; margin-top:-25px}
+.breadcrumb-section .right .socialdiv ul li{ padding:0 3px}
+.tab_cnt_top .sortby .form-group.common {width: 201px;}
+.tab_cnt_top .custom-search-input .input-group {width: 215px;}
+.examexp-tab .total_exp .left img {width: 48px;}
+.examexp-tab .total_exp .left h3 {font-size: 44px;}
+.examexp-tab .total_exp .left p {font-size: 18px;}
+.examexp-tab .total_exp .right p {font-size:16px;}
+.examexp-tab .examfilter_maindiv .examfilter .top .filter_field {display: inline-block;margin-top:8px;margin-left:0px;}
+.examexp-tab .examfilter_maindiv .examfilter {padding: 20px 10px;}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group.common {width:171px;}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group {margin: 0 0px;}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group.common .btn .filter-option {overflow: hidden;text-overflow: ellipsis;width: 100%;}
+.examexp-tab .examfilter_maindiv .examfilter .sortby {margin: 15px 0 0; padding-top: 10px;}
+.examexp-tab .examfilter_maindiv .examfilter .sortby .control-label{ margin-bottom:8px}
+.examexp-tab .examfilter_maindiv .examfilter .sortby .common a { margin: 0 2px;padding: 6px 8px; font-size:14px}
+.examexp-tab .examfilter_maindiv .examfilter .top label {font-size:16px;}
+.examexp-tab .exam_shedule ul li .cnt h2 {font-size: 18px;}
+.examexp-tab .exam_shedule ul li .cnt p {font-size: 16px;}
+.examexp-tab .exam_exp_list > ul > li .content .short_cnt h2 {margin-bottom: 14px;}
+.examexp-tab.practice-tab .examfilter_maindiv .examfilter .top .form-group.common {width: 174px;}
+.examexp-tab.practice-tab .exam_exp_list > ul > li .content .short_cnt h2 a.quest {width:80%;}
+.practice-tab .questdetail_maindiv .quset_div h2.quest {font-size: 18px;}
+.examexp-tab.product-tab .examfilter_maindiv .examfilter .top .form-group.common{ margin-left: 0;margin-right: 10px; width:218px}
+.examexp-tab.product-tab .examfilter_maindiv .examfilter .top .form-group.label {display: block;float: none;clear: both;text-align: left;margin-bottom: 8px;}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .short_cnt ul li{ padding-left:0}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .showcmnt_list li {border-left:0px;margin-bottom: 5px;}
+.examexp-tab .examfilter_maindiv h4 {margin-bottom: 13px;}
+.course-tab .coursename_div .content .short_cnt h2 {font-size: 25px;}
+.course-tab .coursename_div .examfilter .sortby .common a {font-size: 15px;margin: 5px 7px 5px 0;padding: 6px 8px;}
+.course-tab .coursename_div .content .short_cnt h2 span {width:60%;}
+.signup_innerbox .left h1, .signup_innerbox .right h1 {font-size: 25px;}
+.signup_innerbox .right hgroup h3{font-size: 19px;margin-top: 0;line-height: 25px;}
+.signup_innerbox .right h2{ line-height:25px}
+.signup_innerbox .left .forgot_pass .pull-right,.signup_innerbox .left .btn{ float:none !important}
+.login_innerbox .left {min-height: 562px;}
+.examwiki-tab .tab_cnt_top .sortby .form-group.common {width: 279px;}
+.examwiki-tab .tab_cnt_top .left{ margin-bottom:10px}
+.tab_cnt_top.checklogin p {font-size: 19px;}
+.livechat-tab .chatmain_div .joinchat_maindiv{left:127px;position:absolute;top:140px;width:474px;}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner{ padding:20px}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner h2 {font-size:22px;margin-bottom: 20px;margin-top: 0;}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner ul li {font-size: 18px;}
+.livechat-tab .chatmain_div .joinchat_maindiv .btndiv a{font-size: 20px;}
+.livechat-tab .chatmain_div .joinchat_maindiv .direction{bottom:24px;left:14px;position:absolute;width:100px;}
+.livechat-tab .chatmain_div .panel .left .tab_list01 ul li a {padding: 10px 10px 8px;}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .search-query {font-size: 14px;}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .input-group {width: 167px;}
+.livechat-tab .chatmain_div .panel .right .message-listing .media.recieve_msg {padding-right: 20%;}
+.livechat-tab .chatmain_div .panel .right .message-listing .media.sent_msg {padding-left: 20%;}
+.navbar-inverse .nav > li .caret1{position: relative;top: 0;}
+.shareexam_form textarea {height: 128px;}
+.examopinion_form .exmrating .right .form-group{ text-align:left !important }
+.userdashboard-page .dashboard_side {background-color: #ffffff;height: 100%;margin-top: 0;position: absolute; z-index:9;width: 100%;}
+.userdashboard-page .side-collapse-container{transition:left 0.4s ease 0s;-webkit-transition:left 0.4s ease 0s;-ms-transition:left 0.4s ease 0s;-o-transition:left 0.4s ease 0s;left:0;height: 100%;background:#fff}
+.userdashboard-page .side-collapse-container .main-container .topheader {padding: 12px 15px 10px 15px;position: fixed;top: 0;width: 100%;z-index: 1;}
+.userdashboard-page .side-collapse-container .main-container .topheader .left h3 {display: inline-block;font-size:23px;margin: 10px 0 0;}
+.userdashboard-page .side-collapse-container .main-container .topheader .left .navbar-toggle{display:block !important;float:left;margin-top:5px;top:0;}
+.userdashboard-page .side-collapse-container .main-container .topheader .left .navbar-toggle .icon-bar{ background-color:#fff}
+.userdashboard-page .side-collapse-container .main-container {background: #ffffff none repeat scroll 0 0;padding-left: 0;position: relative;z-index: 999;}
+.userdashboard-page .dashboard_side .dashboard_menu {width: 220px;z-index:0;top: 69px;}
+.userdashboard-page .dashboard_side .side-collapse-container.out {left: 220px;}
+.dashboardboxes{padding: 28px 0;}
+.dashboardboxes .panel-stat .panel-body{padding: 14px;}
+.dashboardboxes .panel .stat-num {font-size: 35px;font-weight: 700;}
+.dashboardboxes .panel-stat .icon {bottom: 30px;}
+.dashboardboxes .panel-stat h3 {font-size: 20px;}
+.dashboardboxes .panel-stat .icon i {font-size: 67px;}
+.userdashboard-page .side-collapse-container .main-container .admintable .editviewdel{width: 115px;}
+.userdashboard-page .side-collapse-container .main-container .admintable .editviewdel li{ padding:0 2px}
+.myexperiences .exam_shedule ul li .cnt p {font-size: 16px;}
+.myopinion .exam_shedule ul li .cnt p {font-size: 16px;}
+.myopinion .coursename_div .info .short_cnt h2{ font-size:26px}
+.myquestions .questdetail_maindiv .quset_div h2.quest {font-size: 18px;}
+.myprofile{padding: 0;}
+.myprofile .myprofile-desc .profile-info h1 {font-size: 30px;}
+.report-abuse-page h2{ font-size:24px;}
+.examopinion_form .product-service .btn-primary{ margin-top:0px; float:left !important; margin-bottom:15px;}
+}
+@media screen and (max-width: 767px) {
+.btn{ font-size:15px}	
+body {font-size: 14px;}	
+.side-collapse-container{width:100%;position:relative;left:0;transition:left .4s;}
+.side-collapse-container.out{left:280px;}
+.side-collapse{top:50px;bottom:0;left:0;width:280px;position:fixed;overflow:hidden;transition:width .4s;}
+.side-collapse.in {width:0;}
+.navbar-inverse.navbar-static-top .navbar-collapse, .navbar-inverse.navbar-fixed-bottom .navbar-collapse {max-height: 100%;overflow-x: hidden;overflow-y: auto;}
+.navbar-inverse{ min-height:40px}
+.navbar-inverse .navbar-nav > li > a {font-size:12.7px; padding:10px}	
+.navbar-inverse .nav li ul li a{ padding:5px 18px 5px 13px !important; font-size:14px; color:#fff !important;}
+.navbar-inverse .nav li ul li.open .has-submenu.highlighted{ color:#000 !important; background-color:#fff !important}
+.navbar-inverse .nav li ul li a:hover {background-color: #fff !important;color: #000 !important;}
+.navbar-inverse .nav li{ width:280px}
+.navbar-inverse .loginuser{ float:right;margin-bottom:0;margin-right: 10px;padding-top: 8px;}
+.navbar-inverse .loginuser li{ display:block; float:left}
+.navbar-inverse .loginuser li+li{ border-left:1px solid #E6E6E6;  padding-left: 8px;padding-right: 12px;margin-top: 4px;}
+.navbar-inverse .loginuser .useracconut{font-size:16px; line-height:35px;background-color:transparent !important;border:0px; padding-left:4px; padding-right:4px;border:0px !important; padding-top:0px !important; color:#fff}
+.navbar-inverse .loginuser .useracconut:hover,.navbar-inverse .loginuser .useracconut:focus{ text-decoration:none}
+.navbar-inverse .loginuser .useracconut .userimg{ width:35px; height:35px; float:left; margin-right:10px; background-repeat:no-repeat; background-size:cover; border:2px solid #f9a22f; border-radius:50%;background-position: center center;}
+.navbar-inverse .loginuser .useracconut span.name{display: inline-block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;max-width: 80px;}
+.navbar-inverse .loginuser .signout{color:#fff; font-size:20px;display: table-cell;}
+.navbar-inverse .loginuser .signout:hover{color:#f9a22f}
+.navbar-inverse .loginuser .notification{color:#fff;font-size:20px; position:relative}
+.navbar-inverse .loginuser .notification .badge{background-color: #f9a22f;left: 6px;position: absolute;top: -8px;}
+.top_header{ padding-bottom:15px}
+.top_header .logo{ text-align:center}
+.top_header .logo a{ float:none; display:block}
+.top_header .logo a img{ max-width:200px; margin:auto}
+.banner .banner_cnt {bottom: 10px;}
+.accountlist-nav{ float:right; margin-top:15px; margin-right:5px}
+.accountlist-nav li a{ color:#fff}
+.accountlist-nav li { border-left:1px solid #fff; height:14px; line-height:14px; padding:0 8px}
+.accountlist-nav li:first-child{ border-left:0px}
+.accountlist-nav li a:hover,.accountlist-nav li a:focus{ text-decoration:none}
+.top_header .custom-search-input .input-group {margin-top:6px;padding-left:0px;}
+.top_header .custom-search-input .search-query {font-size: 14px;}
+.banner .banner_cnt h2 {font-size: 38px; margin-bottom:18px; display:none}
+.banner .banner_cnt a {font-size:16px;padding: 5px 20px;}
+.registered_row .commonbox {padding: 4px 15px 10px;}
+.registered_row .commonbox .content p {font-size: 14px;}
+.registered_row .commonbox.second {padding-left: 15px;}
+.registered_row .commonbox.third {padding-left: 15px;}
+.common_section header h1 {font-size: 25px;}
+.common_section header {margin-bottom: 30px;}
+.welcome_section header h1 {font-size:24px;}
+.featurediv figure h3 {font-size: 17px;}
+.featurediv h2 {margin: 28px 0;font-size: 24px;}
+.welcome_section .top_section p,.featurediv figure figcaption p{ font-size:14px}
+.featurediv figure figcaption {height:auto;padding: 10px;}
+.breadcrumb-section {height: auto;padding-bottom: 15px;   margin-top: 0;}
+.breadcrumb-section .right .socialdiv{background-position:0px 4px; text-align:left; background-image: url(../images/shareon-mobile.png);margin-bottom: 0;margin-top: 10px;padding-left:105px;padding-top: 18px; overflow:hidden }
+.breadcrumb-section .right .socialdiv ul{ display:inline-block; float:left}
+.breadcrumb-section .right .socialdiv .navbar-toggle{ margin:0; margin-top:-4px; background-color:#08bfdd; border-color:#08bfdd}
+.breadcrumb-section .right .socialdiv .navbar-toggle .icon-bar{ background-color:#fff}
+.breadcrumb-section .right .socialdiv ul li{ padding:0 1px}
+.innerpages_content .tabcontainer .tab_list .container{ padding:0}
+.social_section ul li {margin: 0;}
+.social_section ul li a {height: 70px;padding: 12px 8px 8px;width: 70px;}
+footer{ text-align:center}
+footer .f-brdr { padding-left: 15px; background:none}
+footer .f-top .logo{ padding-top:15px}
+footer .f-top .logo img{ margin:auto; max-width:200px}
+footer .middle{ margin:25px 0}
+footer .middle h3 {font-size:13px;margin-top: 10px;}
+footer .footer-link li {padding: 0 9px;}
+footer .footer-link {padding-top:15px; margin-top:10px}
+.copyright-footer {margin-top: 5px;padding:6px 0;text-align: center;}
+.navbar-inverse .navbar-header{ padding-left:15px}
+.common_section {padding: 18px 0 30px;}
+.innerpages_content .tabcontainer {margin-top: 0;}
+.breadcrumb-section .top_innerheading {font-size:25px;}
+.innerpages_content .tabcontainer .tab_list .navbar-collapse{ background-color:#08bfdd; border:0px}
+.innerpages_content .tabcontainer .tab_list ul {padding:0px 0px 0; margin-bottom:0}
+.innerpages_content .tabcontainer .tab_list.round ul li{float: none;display:block;margin-right:0px;}
+.innerpages_content .tabcontainer .tab_list.round ul li+li{ border-top:1px solid #02aac8}
+.innerpages_content .tabcontainer .tab_list.round ul li a{ font-size:18px; padding:7px 15px; color:#fff; display:block;font-family: "gasparregular";}
+.innerpages_content .tabcontainer .tab_list.round ul li a:hover,.innerpages_content .tabcontainer .tab_list.round ul li a:focus{text-decoration:none; background-color:#02aac8}
+.innerpages_content .tabcontainer .tab_list.round ul li.active a{background-color:#02aac8}
+.innerpages_content .tabcontainer .tab-content{box-shadow:none;}
+.tab_cnt_top {text-align: left; margin-bottom: 10px;margin-top: 0;}
+.tab_cnt_top .left{ margin-bottom:10px}
+.tab_cnt_top .left,.tab_cnt_top .right{ float:none !important;}
+.tab_cnt_top > a {margin: 5px 0;}
+.tab_cnt_top .sortby.pull-left{ float:none !important}
+.tab_cnt_top .sortby .form-group{ margin-bottom:0; width:100% !important}
+.tab_cnt_top .custom-search-input{margin:8px 0; display:block}
+.tab_cnt_top .custom-search-input .input-group {width:100%}
+.examexp-tab .total_exp .left img {width:34px;}
+.examexp-tab .total_exp .left h3 {font-size: 30px; margin-top:0}
+.examexp-tab .total_exp .left p {font-size: 18px;}
+.examexp-tab .total_exp .right p {font-size: 15px;padding: 0;text-align: left;}
+.examexp-tab .examfilter_maindiv .examfilter {padding: 20px 10px;}
+.examexp-tab .examfilter_maindiv .examfilter .top .filter_field {display: block;}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group.common {margin: 10px 0;width: 100%;}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group {margin: 0 0px;}
+.examexp-tab .examfilter_maindiv .examfilter .top .form-group.common .btn .filter-option {overflow: hidden;text-overflow: ellipsis;width: 100%;}
+.examexp-tab .examfilter_maindiv .examfilter .sortby .form-group .control-label{ font-size:16px}
+.examexp-tab .examfilter_maindiv .examfilter .sortby {margin: 15px 0 0; padding-top: 10px;}
+.examexp-tab .examfilter_maindiv .examfilter .sortby .common a { font-size: 13px;margin: 4px 2px;padding: 6px;}
+.examexp-tab .examfilter_maindiv .examfilter .sortby .form-group{ margin-bottom:0}
+.examexp-tab .examfilter_maindiv h4 {font-size: 18px;line-height: 24px;margin-bottom: 13px;}
+.examexp-tab .examfilter_maindiv .examfilter .top label {font-size:16px; white-space:normal; text-align:left}
+.examexp-tab .exam_exp_list > ul > li {padding-left: 0;position: relative;}
+.examexp-tab .exam_exp_list .score_date {border-right:0px solid #e4e4e4; border-bottom:1px solid #e4e4e4;float:none;height:auto;width: 100%; top:0; position:relative}
+.examexp-tab .exam_exp_list .score_date .cmn {display: inline-block;padding:12px 15px;width: 49%; vertical-align: top;}
+.examexp-tab .exam_exp_list .score_date .score {border-bottom:0px solid #e4e4e4;border-right:1px solid #e4e4e4;}
+.examexp-tab .exam_exp_list .score_date .cmn img {margin-right: 7px;width: 23px;}
+.examexp-tab .exam_exp_list > ul > li .content .short_cnt h2 {font-size: 17px;margin-bottom:15px;margin-top:0;line-height:22px;}
+.examexp-tab .exam_exp_list > ul > li .content .showcmnt_list li{padding:3px 10px 3px 15px; border:0px; background:url(../images/list-dot.png) no-repeat left 10px}
+.examexp-tab .examdetail_maindiv .examname_div .score {border-right:0px solid #e4e4e4; border-bottom:1px solid #e4e4e4;float: none;height: 100%;margin-right: 0;width: 100%;margin-bottom: 20px; padding-bottom:10px}
+.examexp-tab .examdetail_maindiv .examname_div .content .short_cnt {padding: 0 0;}
+.examexp-tab .exam_shedule ul li {margin: 0 15px;padding:15px 0;}
+.examexp-tab .exam_shedule ul li .icon {width: 51px;}
+.examexp-tab .exam_shedule ul li .cnt h2 {font-size: 16px;}
+.examexp-tab .exam_shedule ul li .cnt{ padding-left:10px}
+.examexp-tab .exam_shedule ul li .cnt p {font-size: 14px;}
+.examexp-tab .usefulreview .left ul, .examexp-tab .usefulreview .left label{ float:none}
+.examexp-tab .usefulreview .right{ text-align:left; margin-top:10px}
+.examexp-tab .commentmain_div {padding:15px 10px;}
+.examexp-tab .commentmain_div .givecmnt .media .media-left .media-object {height: 50px;width: 50px;}
+.examexp-tab .commentmain_div .givecmnt .media .media-left {padding-right: 10px;}
+.examexp-tab .commentmain_div .givecmnt .media .media-body {padding-top: 4px;}
+.examexp-tab .commentmain_div .givecmnt .media .media-body .custom-search-input button {font-size: 17px;height: 29px;margin-top: 8px; padding: 2px 13px 2px 8px;}
+.commentmain_div .givecmnt .media .media-body .custom-search-input .search-query {border-radius: 4px;font-size: 14px;height: 44px;padding-right:50px;}
+.examexp-tab .commentmain_div .commentlisting h2 {margin-bottom: 17px;margin-top: 0px;}
+.examexp-tab .commentmain_div .commentlisting ul li .media .media-left .media-object {height: 50px;width: 50px;}
+.examexp-tab .commentmain_div .commentlisting ul li .media .media-left {padding-right: 11px;}
+.examexp-tab .commentmain_div .commentlisting ul li .media .media-body h4 {font-size:17px;}
+.forum-tab .forumlisting > ul > li .media .media-left .media-object {height: 50px;width: 50px;}
+.forum-tab .forumlisting > ul > li .media .media-left {padding-right: 15px;}
+.forum-tab .forumlisting > ul > li .media .media-body h4 {font-size: 16px;}
+.forum-tab .forumlisting > ul > li .media .media-body p {font-size: 14px;}
+.forum-tab .forumlisting > ul > li .media .media-body .forumtags .left span {font-size: 13px; margin: 3px 1px;padding: 4px 8px;}
+.forum-tab .forumlisting > ul > li .media .media-body .forumtags .right,.forumdetail_box .foruminner_div .media .media-body .forumtags .right{ margin-top:10px}
+.forum-tab .forumlisting > ul > li .media .media-body .forumtags .right p,.forumdetail_box .foruminner_div .media .media-body .forumtags .right p {font-size: 13px;text-align: left;}
+.forumdetail_box .foruminner_div .media-left .media-object {height: 50px;width: 50px;}
+.forumdetail_box .foruminner_div .media .media-left {padding-right: 15px;}
+.forumdetail_box .foruminner_div .media .media-body h4 {font-size: 20px;}
+.forumdetail_box .foruminner_div .media .media-body .forumtags {padding-bottom: 3px;}
+.forumdetail_box .foruminner_div .media .media-body p {font-size: 14px;}
+.forumdetail_box .forum-comments .givecmnt .media .media-left {padding-right: 15px;}
+.forumdetail_box .forum-comments {margin-top:25px;padding-left: 0;}
+.forumdetail_box .givecmnt {margin-bottom: 26px;}
+.examexp-tab.product-tab .examfilter_maindiv .examfilter .top .form-group.common{ width:100%}
+.examexp-tab.practice-tab .exam_exp_list .score_date .score{border-bottom: 0 none;border-right: 0 none; width:100%; padding-top:10px}
+.examexp-tab.practice-tab .exam_exp_list .score_date .cmn h3 img {height: 24px;margin-right: 0;margin-top: -9px;width: auto;}
+.examexp-tab.practice-tab .exam_exp_list > ul > li .content .short_cnt h2 a.quest {float: none;margin-bottom: 5px;width: 100%;}
+.practice-tab .questdetail_maindiv .quset_div h2.quest {font-size: 18px;line-height: 19px;}
+.examexp-tab.practice-tab .examfilter_maindiv .examfilter .top .form-group.common {width: 100%;}
+.examexp-tab.product-tab .exam_exp_list .score_date{}
+.examexp-tab.product-tab .exam_exp_list .score_date .score {border-bottom: 0 none;border-right: 0;width: 100%; padding:10px}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .short_cnt .logo-img {float: none;margin-bottom: 16px;margin-right:0px;}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .showcmnt_list ul li .give_opinion{ display:block; margin-bottom:5px}
+.examexp-tab.product-tab .exam_exp_list > ul > li .content .showcmnt_list ul li a.recommended,.examexp-tab.product-tab .exam_exp_list > ul > li .content .showcmnt_list ul li a.donot_recommended{ font-size:13px}
+.course-tab .coursename_div {padding: 10px;}
+.course-tab .coursename_div .content .short_cnt .logo-img {float: none;margin-bottom: 12px;margin-right: 0; width:150px}
+.course-tab .coursename_div .content .short_cnt h2 {font-size: 24px; margin-top:15px}
+.course-tab .coursename_div .content .short_cnt ul li+li{ margin-top:10px}
+.course-tab .coursename_div .examfilter .sortby .form-group{ margin-bottom:0}
+.course-tab .coursename_div .examfilter .sortby .common a {font-size:14px;margin: 5px 7px 5px 0;padding: 6px 8px;}
+.course-tab .opinium_list .recommend {padding:10px 15px;text-align: center; height:104px;}
+.course-tab .examdetail_maindiv h2.courseheading {font-size: 21px;}
+.new-background-image-brochure{ background-position:center}
+.signup_mainbox header h2 {font-size: 29px;}
+.signup_mainbox header p {font-size: 18px;line-height: 23px;}
+.signup_innerbox .left h1, .signup_innerbox .right h1 {font-size: 22px; margin-bottom:13px}
+.signup_innerbox .right hgroup h3 {font-size: 17px;margin-top: 0;}
+.signup_innerbox .right h2{ line-height:25px}
+.signup_innerbox {padding:20px;}
+.signup_innerbox .left .forgot_pass .pull-right,.signup_innerbox .left .btn{ float:none !important}
+.signup_innerbox .left {border-right: 0px solid #d7d7d7;padding-right: 15px;}
+.signup_innerbox .right {padding-left: 15px; margin-top:30px;border-top: 2px solid #d7d7d7; padding-top:20px}
+.signup_innerbox .right ul {margin-top:10px;}
+.signup_innerbox .right ul li {background-position:left 3px;font-size: 15px;margin: 7px 0;}
+.login_innerbox .left { min-height: 0;}
+.tab_cnt_top.checklogin p img.icon {margin-right: 15px;width: 45px;}
+.tab_cnt_top.checklogin p {font-size: 15px;}
+.tab_cnt_top.checklogin p span {height: 38px;}
+.livechat-tab .chatmain_div .joinchat_maindiv{left:auto;position:relative;top:0px;width:100%; margin:30px auto}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner{ padding:20px; box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.63);}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner h2 {font-size: 16px;font-weight: bold;line-height: 22px;margin-bottom: 20px;margin-top: 0;}
+.livechat-tab .chatmain_div .joinchat_maindiv .joinchat_inner ul li {font-size:15px;}
+.livechat-tab .chatmain_div .joinchat_maindiv .btndiv a{font-size:17px;}
+.livechat-tab .chatmain_div .joinchat_maindiv .direction{ display:none}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input {display: block;float: none;margin-bottom: 10px;margin-right: 0;}
+.livechat-tab .chatmain_div .panel .left .searchuser .custom-search-input .input-group {width: 100%;}
+.livechat-tab .chatmain_div .panel .left .searchuser .navbar-toggle{ margin:0; padding:12px 12px}
+.livechat-tab .chatmain_div .panel .left .searchuser .navbar-toggle .icon-bar{ background-color:#fff}
+.livechat-tab .chatmain_div .panel .right .message-listing .media.recieve_msg {padding-left: 11px;padding-right: 11px;}
+.livechat-tab .chatmain_div .panel .right .message-listing .media.sent_msg {padding-left: 11px;padding-right: 11px;}
+.livechat-tab .chatmain_div .panel .right .message-listing .media p.time {font-size:12px;margin-top:5px;}
+.livechat-tab .chatmain_div .commentdiv {padding: 10px 11px;}
+.livechat-tab .chatmain_div .commentdiv .form-control {font-size: 14px;}
+.livechat-tab .chatmain_div .commentdiv .input-group-btn .btn {padding: 10px;}
+.livechat-tab .chatmain_div .panel .right .panel-heading {border-top: 1px solid #cccccc;padding:15px 12px;border-radius:0;}
+.livechat-tab.personalchat-tab .chatmain_div .panel .right .panel-heading {padding:9px 12px 9px;}
+.livechat-tab .chatmain_div .panel .left {border-right: 0 solid #cccccc; padding-bottom:5px}
+.livechat-tab.personalchat-tab .right .group_chat_cnt .usernamepic span {padding-top: 4px;}
+.livechat-tab.personalchat-tab .right .usernamepic span {padding-top: 13px;}
+.livechat-tab .chatmain_div .panel .left .userlisting {height: 313px;}
+.loginmodal .loginbox .modallogo {margin: -43px auto 5px;padding: 12px 20px 0;width: 200px;}
+.loginmodal .loginbox header {margin-bottom: 15px;}
+.loginmodal .modal-body {padding: 15px 15px;}
+.loginmodal .loginbox header h2 {font-size: 22px;}
+.common_form_section {margin: 0 -15px;}
+.shareexam_form .scorefield .input-lg {margin-right:6px;width: 90px;}
+.shareexam_form textarea,.postwiki_form textarea,.examopinion_form textarea,.postforum_form textarea {font-size: 14px;}
+.input-lg {font-size: 14px;}
+.input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn {font-size:14px;}
+.examopinion_form .exmrating .left .radio-inline{ margin-left:0}
+.examopinion_form .exmrating .left .radio-inline+.radio-inline{ margin-top:5px}
+.examopinion_form .exmrating .right .form-group{ text-align:left !important }
+.userdashboard-page .side-collapse-container .main-container {min-height: 40px;}
+.mobile_dashboard_heading h3{border-bottom: 1px solid #d1cfcf; color: #454343;font-family: "proxima_novasemibold";font-size: 23px;padding: 0 15px 10px;margin-top: 13px; margin-bottom:0}
+.userdashboard-page .side-collapse-container .main-container .topheader .right .usernamepic .name {display: none;}
+.userdashboard-page .side-collapse-container .main-container .topheader .right .homeicon.fa {}
+.userdashboard-page .side-collapse-container .main-container .topheader .right .usernamepic .userimg{float:none;display:inline-block;margin-left: 5px; margin-right: 5px; width:40px; height:40px}
+.userdashboard-page .side-collapse-container .main-container .topheader ul.right li{ display:inline-block; line-height:normal; float:left}
+.userdashboard-page .side-collapse-container .main-container .topheader ul.right li.logout{border-left: 0px solid #ffffff;padding-left:5px; font-size:20px; top:10px; position:relative}
+.userdashboard-page .side-collapse-container .main-container .topheader .right .usernamepic .default_userimg {height: 40px;Line-height: 40px;width: 40px; margin-right:0}
+.userdashboard-page .side-collapse-container .main-container .topheader ul.right li:first-child{top:0px; position:relative}
+.userdashboard-page .dashboard_side {background-color: #ffffff;height: 100%;margin-top: 0;position: absolute; z-index:9;width: 100%;}
+.userdashboard-page .side-collapse-container{transition:left 0.4s ease 0s;-webkit-transition:left 0.4s ease 0s;-ms-transition:left 0.4s ease 0s;-o-transition:left 0.4s ease 0s;left:0;height: 100%;background:#fff}
+.userdashboard-page .side-collapse-container .main-container .topheader {padding:7px 15px 3px;position: fixed;top: 0;width: 100%;z-index:5;}
+.userdashboard-page .side-collapse-container .main-container .topheader .left h3 {display: inline-block;font-size:23px;margin: 10px 0 0;}
+.userdashboard-page .side-collapse-container .main-container .topheader .left .navbar-toggle{display:block !important;float:left;margin-top:5px;top:0;}
+.userdashboard-page .side-collapse-container .main-container .topheader .left .navbar-toggle .icon-bar{ background-color:#fff}
+.userdashboard-page .side-collapse-container .main-container {background: #ffffff none repeat scroll 0 0;padding-left: 0;position: relative;z-index: 999; padding-top:61px}
+.userdashboard-page .dashboard_side .dashboard_menu {width:260px;z-index:0;top:61px;}
+.userdashboard-page .dashboard_side .dashboard_menu .navbar-header img {height: 32px;margin: auto;}
+.userdashboard-page .dashboard_side .dashboard_menu .navbar-nav {margin: 0;}
+.userdashboard-page .dashboard_side .side-collapse {bottom: 0;left: 0; overflow-x: hidden;overflow-y: auto;padding: 0 0px;position: fixed;top:116px;transition: width 0.4s ease 0s;width:260px;}
+.side-collapse-container.out {left:260px;}
+.dashboardboxes{padding:10px 0;}
+.dashboardboxes .panel-stat .panel-body{padding: 14px;}
+.dashboardboxes .panel-stat .panel-body .row{ margin-left:0; margin-right:0}
+.dashboardboxes .panel .stat-num {font-size: 35px;font-weight: 700;}
+.dashboardboxes .panel-stat .icon {bottom: 30px;}
+.dashboardboxes .panel-stat h3 {font-size: 18px;}
+.dashboardboxes .panel-stat .icon i {font-size: 67px;}
+.userdashboard-page .side-collapse-container .main-container .admintable {border: 0 none;margin-bottom: 0;}
+.adminpagination{ text-align:center}
+.userdashboard-page .side-collapse-container .main-container .content .searchuser .custom-search-input .input-group {width: 100%;z-index: 0;}
+.myexperiences .exam_exp_list .score_date {border-right:0px solid #e4e4e4;border-bottom:1px solid #e4e4e4;float: none;height: 100%;margin-right:0px;width: 100%;}
+.myexperiences .exam_exp_list .score_date .cmn {display: inline-block;padding: 12px 15px;vertical-align: top;width: 49%;}
+.myexperiences .exam_exp_list .score_date .cmn img {top: 4px;width: 23px; margin-right:7px}
+.myexperiences .exam_exp_list .score_date .cmn h3 {font-size: 26px;}
+.myexperiences .exam_exp_list .score_date .score {border-bottom:0px solid #e4e4e4;border-right:1px solid #e4e4e4;}
+.myexperiences .exam_exp_list > ul > li .list-info .short_cnt h2 {font-size:17px;line-height: 22px;}
+.myexperiences .exam_shedule ul li .cnt p {font-size: 14px;}
+.myexperiences .exam_shedule ul li {margin: 0 15px;padding: 20px 0;}
+.myexperiences .exam_shedule ul li .cnt h2 { font-size: 16px;}
+.myexperiences .exam_shedule ul li .icon {width: 50px;}
+.myexperiences .exam_shedule ul li .cnt {padding-left: 10px;}
+.myopinion .coursename_div {padding: 10px;position: relative;}
+.myopinion .exam_shedule ul li .cnt p {font-size: 16px;}
+.myopinion .info .short_cnt .logo-img {float: none;margin-bottom:14px;margin-right: 0;width: 120px;}
+.myopinion .coursename_div .info .short_cnt h2 {font-size:24px;}
+.myopinion .examdetail_maindiv h2.courseheading {font-size:21px;padding: 10px;}
+.myopinion .exam_shedule ul li {margin: 0 15px;}
+.myopinion .exam_shedule ul li .icon {width: 51px;}
+.myopinion .exam_shedule ul li .cnt {padding-left:10px;}
+.myopinion .exam_shedule ul li .cnt h2 {font-size: 16px;}
+.myopinion .exam_shedule ul li .cnt p {font-size: 14px;}
+.myquestions .questdetail_maindiv .quset_div h2.quest {font-size: 18px;line-height: 19px;}
+.contributequest_form textarea {font-size: 14px;}
+.viewforum .forum-info .forumtags .right{ margin-top:10px}
+.viewforum .forum-info .forumtags .right p {font-size:14px;text-align: left;}
+.viewforum .forum-info > ul > li p {font-size: 14px;}
+.viewforum .forum-info > ul > li h2 {font-size:18px;line-height: 23px;}
+.viewwiki .wiki-info > ul > li h2 {font-size: 18px;line-height: 23px;}
+.viewwiki .wiki-info .forumtags .right{ margin-top:10px}
+.viewwiki .wiki-info .forumtags .right p {font-size:14px;text-align: left;}
+.viewwiki .wiki-info > ul > li p {font-size: 14px;}
+.myprofile {padding: 0;}
+.myprofile .myprofile-desc {margin-bottom: 15px;padding-bottom: 15px;}
+.myprofile .myprofile-desc .profile-info h1 {font-size:23px;}
+.myprofile .myprofile-desc .profile-nav .mypic {margin: 0 auto;}
+.myprofile .myprofile-desc .profile-nav {display:block;float: none;margin-right: 0;margin-bottom: 15px;}
+.report-abuse-page h2{color: #545454;font-size: 17px;font-weight: bold;line-height: 24px;}
+.examopinion_form .product-service .btn-primary{ margin-top:0px; float:left !important; margin-bottom:15px;}
+.searchuser .custom-search-input .btn-warning{ margin-top:10px;}
+.admin-side .view-profile .panel-body label{ width:auto; display:inline-block}
+.admin-side .view-profile .panel-body label em{ float:none;}
+.admin-side .view-profile .panel-body span {display: inline-block;}
+.userdashboard-page .dashboard_side .dashboard_menu .side-collapse ul li a{ font-size:13px;}
+.admin-side .admintable tbody td .logo-image{border: 2px solid #f9a22f;height:60px;width:100px;}
+.addnew_product .from_price{ padding-right:15px;}
+.addnew_product .to_price{ padding-left:15px;}
+.addnew_product span.to{top: 6px;}
+.adminloginpage .form-wrap{ width:100%}
+.adminloginpage {padding-bottom: 15px;padding-top: 15px;}
+.adminloginpage h1{font-size: 25px;padding-bottom: 18px;}
+.adminloginpage .form-wrap img{ width:180px;}
+.membershiplan ul li span, .membershiplan ul li strong{width: 106px;}
+.signup_innerbox .left{ min-height:auto;}
+.dashboard-listing{ text-align:center}
+.dashboard-listing li {margin:14px 0 0px; width:135px}
+.dashboard-listing li a {width: auto; display:inline-block; font-size:14px; height:100px}
+.dashboard-listing li .float-shadow::before {display: none;}
+.dashboard-listing li a img {margin-bottom: 6px;max-width: 38px;}
+
+}
+@media screen and (max-width:359px) 
+{
+    .dashboard-listing li {margin:14px 0 0px; width:100%; height:auto}	
+    .dashboard-listing li a { height:auto}	
+}
+
+.errorMessage 
+{
+    color: #a94442;
+}
